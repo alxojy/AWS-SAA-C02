@@ -112,8 +112,22 @@ Real time processing of streaming big data | Queue for storing messages between 
 - Individual message delay. Each message can have a delay up to 15 minutes
 - Dynamically increase concurrency/throughput at read time. ie. Setup CloudWatch to spawn more EC2 instances when backlog increases. Amazon Kinesis Data Streams can scale up to a sufficient number of shards but enough shards need to be provisioned ahead of time
 
+### <a href="https://aws.amazon.com/kinesis/data-firehose/faqs/">Amazon Kinesis Data Firehose FAQ</a>
+##### What is Amazon Kinesis Data Firehose?
+- Streaming ETL solution to load streaming data into data stores & analytics tools (ie. S3, Redshift, OpenSearch)
+- By loading data, it enables near real-time analytics with BI tools 
+- Batch, compress & encrypt data before loading it
 
+### <a href="https://aws.amazon.com/kinesis/data-analytics/faqs/">Amazon Kinesis Data Analytics FAQ</a>
+##### What is Amazon Kinesis Data Analytics?
+- Transform & analyze streaming data in real time with Apache Flink
+- Get insights continuously & immediately
 
+##### Amazon Kinesis Data Analytics Use Cases
+- Streaming ETL
+- Continuous metric generation
+- Responsive real-time analytics
+- Interactive analysis of data streams
 
 
 
