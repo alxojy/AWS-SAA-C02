@@ -347,7 +347,7 @@ Yes. SSL certificate must be installed on the NLB. The NLB uses this certificate
 - When deploying inline virtual appliances where network traffic is not destined for the Gateway LB itself
 - Gateway LB passes all layer 3 traffic through 3rd party appliances, and is invisible to the source & destination of the traffic
 - Provides both layer 3 gateway & layer 4 load balancing capabilities
-- Does not perform TLD termination or encryption/decryption
+- Does not perform TLS termination or encryption/decryption
 
 ### Classic Load Balancer
 - Supports load balancing for EC2 instances
@@ -370,8 +370,8 @@ Examples
 #### AWS Lambda vs EC2
 Lambda | EC2
 ----|----
-Cannot access infrastructure but easy way to execute code in response to events | Customizable OS, network, security settings & entire software stacj
-Lambda performs capacity provisioning, monitoring fleet health, applying security patches, code deployment, running web service front end, monitoring, logging | Provision capacity, monitor fleet health & performance, design fault tolerance & scalability
+Cannot access infrastructure but easy way to execute code in response to events | Customizable OS, network, security settings & entire software stack
+Lambda performs capacity provisioning, monitoring fleet health, applying security patches, code deployment, running web service front end, monitoring, logging | Developers must provision capacity, monitor fleet health & performance, design fault tolerance & scalability
 
 #### How does AWS Lambda secure my code?
 Lambda stores code in S3 & encrypts it at rest
