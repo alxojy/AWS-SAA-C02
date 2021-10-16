@@ -303,12 +303,12 @@ Yes. SSL certificate has to be installed on the ALB. The certificate is used to 
   - Forward
 
 #### How to protect web applications behind ALB?
-Integrate with <a href="https://aws.amazon.com/waf/faqs/">WAF</a>.        
+##### Integrate with <a href="https://aws.amazon.com/waf/faqs/">WAF</a>        
 Web application firewall that protects web applications from attacks by allowing configurations based on IP addresses, HTTP headers, custom URI strings
 
 #### ALB user authentication
-**Amazon Cognito**
-- Provide flexibility to authenticate via social media ie. Google, Facebook etc
+##### Amazon Cognito
+- Provide flexibility to authenticate via social accounts ie. Google, Facebook etc
 - Managing multiple identity providers including OpenID Connect & want to create a single authentication rule in ALB that use Cognito to federate multiple identity providers
 
 ### Network Load Balancer
@@ -319,7 +319,7 @@ Web application firewall that protects web applications from attacks by allowing
 - Preserves the clients' source IP
 
 #### Does NLB support DNS regional & zonal fail-over?
-Yes. Route53 health checking & DNS failover features can be used to enhance the availability of the applications running behind NLBs. Using Route53 DNS failover, applications can run in multiple AZs & designate alternate LBs for failover across regions. 
+Yes. Route53 health checking & DNS failover features can be used to enhance the availability of the applications running behind NLBs. Using Route53 DNS failover, applications can run in multiple AZs & designate alternate LBs for failover across regions
 
 #### NLB IPs
 NLB addresses must be completely controlled by the user or by ELB. This is to ensure that when using EIPs with a NLB, all addresses known to the user's clients do not change
