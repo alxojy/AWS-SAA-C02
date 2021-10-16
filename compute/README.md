@@ -114,6 +114,62 @@ To ensure customers are efficiently using the EIP addresses
 - An instance can have up to 5 security groups
 - By default, all inbound connections are denied
 
+### Management
+#### <a href="https://aws.amazon.com/ec2/faqs/#Amazon_CloudWatch">Amazon CloudWatch</a>
+- Receives & provides metrics for all EC2 instances
+- CloudWatch metrics can be obtained for 2 weeks including for terminated instances
+
+#### <a href="https://aws.amazon.com/ec2/autoscaling/faqs/">EC2 Auto Scaling</a>
+- Fully managed service designed to launch/ terminate EC2 instances automatically (terminate instances when CPU utilization is low vice versa)
+- Detect impaired EC2 instances & replace automatically
+- Create/ configure EC2 auto scaling groups
+- Use CloudWatch to send alarms to trigger scaling activities & ELB to distribute traffic to instances within the auto scaling group
+- Instances can span AZs
+
+#### What is target tracking?
+- Used to setup dynamic scaling
+- Select load metric ie. CPU utilization
+- Set the target value
+- EC2 auto scaling automatically adjusts the number of EC2 instances needed to maintain the target
+
+#### What happens when the auto scaling group (ASG) is deleted?
+The EC2 instances will be terminated and the ASG will be deleted
+
+#### What is a <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html">launch template</a>? 
+- Includes information that EC2 needs to launch instances ie. AMI, instance type, security groups etc.
+- Launch templates cannot be modified after it's created. To change the launch template, a new one has to be created & attached to the EC2 ASG
+
+#### Does ELB health checks work with ASG?
+Yes. EC2 auto scaling works with ALB & NLB
+
+#### How to control access to EC2 auto scaling resources?
+EC2 auto scaling integrates with IAM
+  - Create users & groups
+  - Assign unique security credentials to each user
+  - Control each user's permissions to perform tasks using AWS resources
+  - Create roles & define users/ services that use them
+  - Use existing identities to grant permissions to perform tasks using AWS resources
+
+#### <a href="https://aws.amazon.com/ec2/faqs/#Hibernate">Hibernate</a>
+- Quickly start up instances (as opposed to the stop state)
+- Used for instances that take a long time for bootstrap scripts to run
+- RAM data is moved to the EBS root volume (RAM data is typically deleted for stopped instances)
+- An encrypted EBS volume must be attached
+- Max: 60 days
+
+### EC2 types
+#### <a href="https://aws.amazon.com/ec2/faqs/#On-Demand_Capacity_Reservation">On demand</a>
+
+#### <a href="https://aws.amazon.com/ec2/faqs/#On-Demand_Capacity_Reservation">On demand</a>
+
+#### <a href="https://aws.amazon.com/ec2/faqs/#Reserved_Instances">Reserved instances</a>
+
+#### <a href="https://aws.amazon.com/ec2/faqs/#Spot_Instances">Spot instances</a>
+
+
+
+
+
 
 
 
