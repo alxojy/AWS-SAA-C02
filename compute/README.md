@@ -330,6 +330,11 @@ No. Each associated subnet that a NLB is in, the NLB can only support 1 public/ 
 #### Can the internal NLB support more than 1 private IP in each subnet?
 No. For each associated subnet that a LB is in, the NLB can only support 1 private IP
 
+#### Benefit of targeting containers behind a NLB with IP addresses instead of instance IDs
+- Each container on an instance can have its own security group & does not need to share security rules with other containers
+- Can map a container to the IP address of a particular ENI to associate security group(s) per container
+- Load balancing using IP addresses allows multiple containers running on an instance to use the same port
+
 #### How to load balance applications distributed across a VPC & on-premises
 - If the application runs on targets in a VPC & on-premises, they can be added to the same target group using their IP addresses
 - Alternatively, separate load balancers can be used for VPC & on-premises targets
@@ -350,39 +355,23 @@ Yes. SSL certificate must be installed on the NLB. The NLB uses this certificate
 - A security group can be configured for the frontend of the CLB
 - Supports SSL termination
 
+## <a href="https://aws.amazon.com/lambda/faqs/">AWS Lambda FAQ</a>
+#### What is AWS Lambda?
+- Runs code without provisioning/ managing servers
+- Serverless computing to build & run applications (server management by AWS)
 
+#### <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html#intro-core-components-event-sources">AWS Lambda event sources</a>
+Examples
+  - S3
+  - API Gateway
+  - SQS
+  - EventBridge
 
+#### AWS Lambda vs EC2
+Lambda | EC2
+----|----
+Cannot access infrastructure but easy way to execute code in response to events | Customizable OS, network, security settings & entire software stacj
+Lambda performs capacity provisioning, monitoring fleet health, applying security patches, code deployment, running web service front end, monitoring, logging | Provision capacity, monitor fleet health & performance, design fault tolerance & scalability
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### How does AWS Lambda secure my code?
+Lambda stores code in S3 & encrypts it at rest
