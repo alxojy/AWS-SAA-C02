@@ -337,7 +337,18 @@ No. For each associated subnet that a LB is in, the NLB can only support 1 priva
 #### Does NLB support TLS termination?
 Yes. SSL certificate must be installed on the NLB. The NLB uses this certificate to terminate the connection & decrypt requests from clients before sending them to the targets
 
+### Gateway Load Balancer
+#### When to use a Gateway LB compared to NLB or ALB?
+- When deploying inline virtual appliances where network traffic is not destined for the Gateway LB itself
+- Gateway LB passes all layer 3 traffic through 3rd party appliances, and is invisible to the source & destination of the traffic
+- Provides both layer 3 gateway & layer 4 load balancing capabilities
+- Does not perform TLD termination or encryption/decryption
 
+### Classic Load Balancer
+- Supports load balancing for EC2 instances
+- Supports load balancing for HTTP, HTTPS, SSL, TCP
+- A security group can be configured for the frontend of the CLB
+- Supports SSL termination
 
 
 
