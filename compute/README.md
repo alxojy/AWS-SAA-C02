@@ -201,8 +201,22 @@ EC2, ELB, RDS, Auto scaling, S3, SNS, DynamoDB
 - Use VPC to make application private
 - Use IAM to control access & limit permissions
 
+## <a href="https://aws.amazon.com/ecs/faqs/">Amazon Elastic Container Service FAQ</a>
+#### What is Amazon ECS?
+- Container management service that supports Docker containers
+- Easily run applications on a managed cluster of EC2 instances
+- Use simple API calls to launch & stop container-enabled applications, query the state of the cluster & access features ie. security groups, ELB, EBS, IAM roles
 
+#### Does Amazon ECS support applications & services?
+Yes. ECS service scheduler can manage long-running applications & services. Service scheduler maintains
+- Application availability
+- Scaling containers up/ down to meet application's capacity requirements
+- Allows traffic distribution across containers using ELB
+- Automatically register & deregister containers from associated LB
+- Automatically recover unhealthy containers (fail ELB health checks)
 
+#### Does Amazon ECS support dynamic port mapping?
+Yes. It's possible to associate a service on ECS to an ALB. The ALB supports a target group that contains a set of instance ports. A dynamic port can be specified in the ECS task definition which gives the container an unused port when it is scheduled on the EC2 instace. The ECS scheduler will automatically add the task to the ALB target group using this port
 
 
 
