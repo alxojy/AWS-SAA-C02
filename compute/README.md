@@ -303,7 +303,7 @@ Yes. SSL certificate has to be installed on the ALB. The certificate is used to 
   - Forward
 
 #### How to protect web applications behind ALB?
-**Integrate with <a href="https://aws.amazon.com/waf/faqs/">WAF</a>**
+Integrate with <a href="https://aws.amazon.com/waf/faqs/">WAF</a>.        
 Web application firewall that protects web applications from attacks by allowing configurations based on IP addresses, HTTP headers, custom URI strings
 
 #### ALB user authentication
