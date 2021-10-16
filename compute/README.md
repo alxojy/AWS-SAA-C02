@@ -213,11 +213,36 @@ Yes. ECS service scheduler can manage long-running applications & services. Serv
 - Scaling containers up/ down to meet application's capacity requirements
 - Allows traffic distribution across containers using ELB
 - Automatically register & deregister containers from associated LB
-- Automatically recover unhealthy containers (fail ELB health checks)
+- Automatically recover unhealthy containers (failed ELB health checks)
 
 #### Does Amazon ECS support dynamic port mapping?
-Yes. It's possible to associate a service on ECS to an ALB. The ALB supports a target group that contains a set of instance ports. A dynamic port can be specified in the ECS task definition which gives the container an unused port when it is scheduled on the EC2 instace. The ECS scheduler will automatically add the task to the ALB target group using this port
+Yes. It's possible to associate a service on ECS to an ALB. The ALB supports a target group that contains a set of instance ports. A dynamic port can be specified in the ECS task definition which gives the container an unused port when it is scheduled on the EC2 instance. The ECS scheduler will automatically add the task to the ALB target group using this port
 
+#### Where to run ECS?
+- EC2 instances for compliance & governance requirements
+- Fargate without having to provision & manage EC2 instances
+
+#### How does AWS Fargate work with ECS?
+With Fargate, the concept of server provisioning, cluster management & orchestration goes away. ECS uses containers provisioned by Fargate to automatically scale, load balance & manage scheduling of the containers for availability
+
+#### Security
+- IAM roles can be defined
+- EC2 instances use an IAM role to access ECS & ECS tasks use an IAM role to access services & resources
+
+## <a href="https://aws.amazon.com/fargate/faqs/">AWS Fargate FAQ</a>
+#### What is AWS Fargate?
+- Serverless compute engine for containers that works with ECS & EKS
+- Eliminates the need to provision servers & manage clusters
+- Supports all container use cases including batch processing, microservices applications, ML
+
+## <a href="https://aws.amazon.com/eks/faqs/">Amazon EKS FAQ</a>
+#### What is Amazon Elastic Kubernetes Service (EKS)?
+- Easily run Kubernetes on AWS without needing to install & operate Kubernetes control plane or worker nodes
+- EKS provisions & scales the Kubernetes control plane across multiple AZs
+- Automatically detects & replaces unhealthy control plane nodes
+- Provide patching for the control plane
+- Can run with Fargate; removing the need to provision & manage servers
+- Integrated with ELB, IAM, VPC, CloudTrail
 
 
 
