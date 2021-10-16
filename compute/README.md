@@ -8,7 +8,7 @@
 #### How to run systems in EC2?
 1. Select/ create AMI(s) (custom AMIs must be bundled & uploaded to S3)
 2. Define number of On-Demand instances (limited to quota. to increase, request from Amazon)
-3. Call RunInstances API
+3. Call `RunInstances` API
 4. Launch EC2 instances if successful
 
 #### What is the difference between local instance store vs Amazon EBS?
@@ -243,6 +243,107 @@ With Fargate, the concept of server provisioning, cluster management & orchestra
 - Provide patching for the control plane
 - Can run with Fargate; removing the need to provision & manage servers
 - Integrated with ELB, IAM, VPC, CloudTrail
+
+## <a href="https://aws.amazon.com/elasticloadbalancing/faqs/">Elastic Load Balancing FAQ</a>
+#### Load balancer overview
+Application LB | Network LB | Classic LB
+----|----|----|----
+layer 7- HTTP, HTTPS requests | layer 4- TCP, UDP for extreme performance/ low latency | Application built within the EC2 classic network
+
+#### Accessing ELB APIs from VPC without public IPs
+- VPC can privately access ELB APIs by creating <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC endpoints</a>
+- VPC endpoints powered by AWS PrivateLink handle the routing between VPC & ELB APIs without an Internet gateway/ NAT gateway/ VPN connection
+
+| ![private-link](https://d1.awsstatic.com/product-marketing/PrivateLink/privatelink_how-it-works.a8ae3df6830296337b30a7c4e75d8eed403eb5d2.png) |
+|:---:|
+| AWS PrivateLink |
+
+### Application Load Balancer
+#### How to use static IP/ PrivateLink on ALB?
+- Forward traffic from NLB (which has support for PrivateLink & a static IP address per AZ) to the ALB
+- Create an ALB target group, register ALB to it & configure the NLB to forward traffic to the ALB target group
+
+#### Can EC2 instances be configured to only accept traffic from ALB?
+Yes
+
+#### Can a security group be configured for the frontend of an ALB?
+Yes
+
+#### Can a single ALB handle both HTTP & HTTPS requests?
+Yes. Listeners can be added for HTTP port 80 & HTTPS port 443
+
+#### How to get a history of ALB API calls?
+Use AWS CloudTrail
+
+#### Does ALB support HTTPS termination?
+Yes. SSL certificate has to be installed on the ALB. The certificate is used to terminate the connection & decrypt requests from clients before sending it to the targets
+
+#### What are the steps to get a SSL certificate?
+- Use <a href="https://aws.amazon.com/certificate-manager/">AWS Certificate Manager (ACM)</a> to provision an SSL/TLS certificate or
+- Obtain the certificate from other sources by creating the certificate request -> getting the certificate request signed by a CA -> uploading the certificate using ACM or IAM
+
+#### ALB & ACM integration
+- Simplifies SSL offloading process
+- Just request a trusted SSL/TLS certificate & select the ACM certificate to provision it with the ALB
+
+#### ALB rules
+- Rules can be configured for each listener on the ALB
+- Rules include conditions & corresponding actions if the conditions are satisfied
+- Supported conditions
+  - Host header
+  - Path
+  - HTTP headers
+  - Methods
+  - Query paramters
+  - Source IP CIDRs
+- Supported actions
+  - Redirect
+  - Fixed response
+  - Authenticate
+  - Forward
+
+#### How to protect web applications behind ALB?
+**Integrate with <a href="https://aws.amazon.com/waf/faqs/">WAF</a>**
+Web application firewall that protects web applications from attacks by allowing configurations based on IP addresses, HTTP headers, custom URI strings
+
+#### ALB user authentication
+**Amazon Cognito**
+- Provide flexibility to authenticate via social media ie. Google, Facebook etc
+- Managing multiple identity providers including OpenID Connect & want to create a single authentication rule in ALB that use Cognito to federate multiple identity providers
+
+### Network Load Balancer
+#### Key features available with NLB
+- Provides both TCP & UDP load balancing
+- Handle millions of requests/sec, sudden volatile traffic patterns & extremely low latencies
+- TLS termination
+- Preserves the clients' source IP
+
+#### Does NLB support DNS regional & zonal fail-over?
+Yes. Route53 health checking & DNS failover features can be used to enhance the availability of the applications running behind NLBs. Using Route53 DNS failover, applications can run in multiple AZs & designate alternate LBs for failover across regions. 
+
+#### NLB IPs
+NLB addresses must be completely controlled by the user or by ELB. This is to ensure that when using EIPs with a NLB, all addresses known to the user's clients do not change
+
+#### Can more than 1 EIP be assigned to the NLB in each subnet?
+No. Each associated subnet that a NLB is in, the NLB can only support 1 public/ internet facing IP address
+
+#### Can the internal NLB support more than 1 private IP in each subnet?
+No. For each associated subnet that a LB is in, the NLB can only support 1 private IP
+
+#### How to load balance applications distributed across a VPC & on-premises
+- If the application runs on targets in a VPC & on-premises, they can be added to the same target group using their IP addresses
+- Alternatively, separate load balancers can be used for VPC & on-premises targets
+
+#### Does NLB support TLS termination?
+Yes. SSL certificate must be installed on the NLB. The NLB uses this certificate to terminate the connection & decrypt requests from clients before sending them to the targets
+
+
+
+
+
+
+
+
 
 
 
