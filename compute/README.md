@@ -78,5 +78,44 @@ No, however snapshots can only capture data that has been written to the EBS vol
 - Can be mounted to 1-1000s of instances including EC2 instances & on-premises server (via AWS Direct Connect)
 
 ### Networking and security
+#### <a href="https://aws.amazon.com/ec2/faqs/#Enhanced_networking">Enhanced networking</a>
+- SR-IOV (Single root I/O virtualization) provides higher I/O performance & lower CPU utilization 
+- Provides higher packed per second (PPS) performance
+- Supports low latency networking
+- Uses ENA
+
+#### Elastic Fabric Adapter (<a href="https://aws.amazon.com/ec2/faqs/#Elastic_Fabric_Adapter_.28EFA.29">EFA</a>)
+- Tightly-coupled HPC applications have access to lower & more consistent latency & higher throughput than traditional TCP channels
+- Provide all ENA functionalities plus OS bypass that allows applications to communicate directly with the hardware provided reliable transport functionality
+
+#### EFA ENI vs ENA ENI
+EFA | ENA 
+----|----
+ENA functionalities + OS bypass | Traditional IP networking features needed for VPC networking
+
+#### EFA pre-requisite
+Can only be attached at launch/ to stopped instances
+
+#### <a href="https://aws.amazon.com/ec2/faqs/#Elastic_IP">Elastic IP</a>
+- Public address is associated to the instance until it is stopped/ terminated
+- Elastic IP address provides a long lived internet routable endpoint
+
+#### Why is the limit 5 EIP addresses per region?
+Public IPV4 addresses are limited. The limit can be raised by submitting a request
+
+#### Why are there charges when EIP address is not associated with a running instance?
+To ensure customers are efficiently using the EIP addresses
+
+#### Elastic Load Balancing (<a href="https://aws.amazon.com/ec2/faqs/#Elastic_Load_Balancing">ELB</a>)
+- Distributes incoming traffic across multiple targets including EC2 instances
+
+#### <a href="https://aws.amazon.com/ec2/faqs/#Security">Security</a>
+- <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security groups</a> to control inbound & outbound traffic
+- An instance can have up to 5 security groups
+- By default, all inbound connections are denied
+
+
+
+
 
 
