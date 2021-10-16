@@ -24,7 +24,7 @@ Yes. EC2 is used jointly with S3 for instances with root devices backed by local
 - Family of instances which use hardware accelerators or co-processors to perform some functions ie. floating-point number calculation & graphics processing more efficiently
 
 #### Types of Accelerated Computing instances
-- GPU comput instances for general-purpose computing
+- GPU compute instances for general-purpose computing
 - GPU graphics instances for graphics intensive applications
 - FPGA programmable hardware compute instances for advanced scientific workloads
 
@@ -47,7 +47,7 @@ Yes. EC2 is used jointly with S3 for instances with root devices backed by local
 #### <a href="https://aws.amazon.com/ec2/instance-types/#Instance_Features">Instance Features</a>
 - Burstable performance instances
   - Provide a baseline CPU level with the ability to burst above the baseline
-  - If the instance does not use the credits it receivers, they are stored in its CPU credit balance up to a max threshold
+  - If the instance does not use the credits it receives, they are stored in its CPU credit balance up to a max threshold
 
 - Multiple storage options
   - EBS
@@ -100,14 +100,14 @@ Can only be attached at launch/ to stopped instances
 - Public address is associated to the instance until it is stopped/ terminated
 - Elastic IP address provides a long lived internet routable endpoint
 
-#### Why is the limit 5 EIP addresses per region?
+#### Why is there a limit of 5 EIP addresses per region?
 Public IPV4 addresses are limited. The limit can be raised by submitting a request
 
 #### Why are there charges when EIP address is not associated with a running instance?
 To ensure customers are efficiently using the EIP addresses
 
 #### Elastic Load Balancing (<a href="https://aws.amazon.com/ec2/faqs/#Elastic_Load_Balancing">ELB</a>)
-- Distributes incoming traffic across multiple targets including EC2 instances
+Distributes incoming traffic across multiple targets including EC2 instances
 
 #### <a href="https://aws.amazon.com/ec2/faqs/#Security">Security</a>
 - <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security groups</a> to control inbound & outbound traffic
@@ -204,7 +204,7 @@ EC2, ELB, RDS, Auto scaling, S3, SNS, DynamoDB
 ## <a href="https://aws.amazon.com/ecs/faqs/">Amazon Elastic Container Service FAQ</a>
 #### What is Amazon ECS?
 - Container management service that supports Docker containers
-- Easily run applications on a managed cluster of EC2 instances
+- Easily run applications on a managed cluster of EC2 instances or using Fargate
 - Use simple API calls to launch & stop container-enabled applications, query the state of the cluster & access features ie. security groups, ELB, EBS, IAM roles
 
 #### Does Amazon ECS support applications & services?
@@ -247,7 +247,7 @@ With Fargate, the concept of server provisioning, cluster management & orchestra
 ## <a href="https://aws.amazon.com/elasticloadbalancing/faqs/">Elastic Load Balancing FAQ</a>
 #### Load balancer overview
 Application LB | Network LB | Classic LB
-----|----|----|----
+----|----|----
 layer 7- HTTP, HTTPS requests | layer 4- TCP, UDP for extreme performance/ low latency | Application built within the EC2 classic network
 
 #### Accessing ELB APIs from VPC without public IPs
