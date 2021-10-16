@@ -37,7 +37,7 @@ Suitable for database workloads with moderate I/O requirements. It provides pred
 Designed to deliver fast, predictable & consistent I/O performance. It is optimized for I/O intensive, OLTP database workloads
 
 ### Automated backups & database snapshots
-#### Automated backups vs DB snapshots?
+#### Automated backups vs DB snapshots
 Automated backups | DB snapshots
 ----|----
 Enables point in time recovery of DB instance (up to most recent restorable time which is usually within the last 5 minutes) | Enables recovery up to the most recent snapshot
@@ -87,7 +87,8 @@ S3
   - Loss of availability in primary AZ
   - Loss of network connectivity to primary
   - Compute unit failure on primary
-  - Storage failure on primary
+  - Storage failure on primary  
+
 *Primary: Writes & reads*  
 *Standby: Only a replica of the primary DB*
 
@@ -117,7 +118,7 @@ No. For scaling, refer to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/
 - Disaster recovery of the source DB instance
 
 #### Can a read replica be in a different AWS region? 
-Yes. Data is asynchronous replicated but the amount of time is dependent on the network latency
+Yes. Data is asynchronously replicated but the amount of time is dependent on the network latency
 
 #### Can a read replica use a Multi-AZ DB instance deployment as its source?
 Yes
