@@ -174,3 +174,64 @@ EC2 auto scaling integrates with IAM
 |:---:|
 | Spot instance lifecycle |
 
+## <a href="https://aws.amazon.com/elasticbeanstalk/faqs/">AWS Elastic Beanstalk FAQ</a>
+#### What is AWS Elastic Beanstalk?
+- Developers can simply upload their application & Elastic Beanstalk automatically handles the deployment details of capacity provisioning, load balancing, auto scaling & application health monitoring
+- Developers are freed from deployment-oriented tasks ie. provisioning servers, setting up load balancing, managing scaling
+
+#### When to use AWS Elastic Beanstalk?
+When it is needed to deploy & manage the application within minutes in AWS Cloud without any experience
+
+#### What elements can be controlled using AWS Elastic Beanstalk?
+- OS selection
+- Types of EC2 instances (On-Demand, RI, Spot)
+- Available database & storage options
+- Login access to EC2 instances
+- Running code in more than 1 AZ
+- Enabling HTTPS protocol on the load balancer
+- Access built-in CloudWatch monitoring & notifications on application health etc
+- Adjust server settings & pass environment variables
+- Run other application components ie. memory caching
+- Access log files without logging in to the application servers
+
+#### What are the underlying services used in AWS Elastic Beanstalk?
+EC2, ELB, RDS, Auto scaling, S3, SNS, DynamoDB
+
+#### How to control access?
+- Use VPC to make application private
+- Use IAM to control access & limit permissions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
