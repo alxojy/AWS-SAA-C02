@@ -158,20 +158,19 @@ EC2 auto scaling integrates with IAM
 - Max: 60 days
 
 ### EC2 types
-#### <a href="https://aws.amazon.com/ec2/faqs/#On-Demand_Capacity_Reservation">On demand</a>
-
-#### <a href="https://aws.amazon.com/ec2/faqs/#On-Demand_Capacity_Reservation">On demand</a>
+#### On demand
+- Pay for compute capacity by the hour/ second with no long term commitments
+- Short-term, irregular workloads that cannot be interrupted
 
 #### <a href="https://aws.amazon.com/ec2/faqs/#Reserved_Instances">Reserved instances</a>
+- Provides a significant discount for 1 or 3 year commitment
+- Reserved instance marketplace is used to sell RIs before the commitment term ends
 
 #### <a href="https://aws.amazon.com/ec2/faqs/#Spot_Instances">Spot instances</a>
+- Instances can be interrupted with a 2 minute notification
+- To prevent data from being lost, spot instances can be used with hibernation (RAM data stored into EBS volumes) & the instances can resume from where it left off prior to interruption
 
-
-
-
-
-
-
-
-
+| ![spot-lifecycle](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/images/spot_lifecycle.png) |
+|:---:|
+| Spot instance lifecycle |
 
