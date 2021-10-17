@@ -274,42 +274,56 @@ Analytical workloads requiring fresh data & good query performance
 5. Application auto scaling issues an `UpdateTable` request to adjust the table's provisioned throughput
 6. DynamoDB processes the `UpdateTable` request & dynamically adjusts the table's provisioned throughput capacity to reach the target 
 
+## <a href="https://aws.amazon.com/redshift/faqs/">Amazon Redshift FAQ</a>
+#### What is Amazon Redshift?
+- Cloud data warehouse to analyze data using SQL & BI tools
+- Run analytic queries against structured & semi-structued data
+- Queries are distributed & parallelized across multiple physical resources in a single AZ
+- Uses replication & continuous backups for availability & failures
 
+#### What is Redshift Spectrum?
+- Run SQL queries directly against exabytes of unstructed data in S3 data lakes with no loading/ ETL required
+- Suitable for running infrequent queries on cold data in an integrated way from the Redshift cluster
 
+#### How does Amazon Redshift performance compare to most on-premises data warehousing & analytics databases?
+- Columnar data storage
+- Advanced compression
+- Massively parallel processing
+- Redshift Spectrum
+- Scalability
 
+#### Data sources
+- S3
+- RDS
+- DynamoDB
+- EMR
+- AWS Glue
+- AWS Data Pipeline
 
+#### Security
+- Access: IAM, identity federation for single sign on (SSO), MFA, column-level access control, VPC 
+- Encryption: SSL, AES-256, KMS
 
+#### What happens to the data warehouse cluster if it supports an AZ outage?
+- Redshift automatically moves the cluster to another AZ without any data loss
+- Must enable relocation capability in the cluster configuration settings
 
+#### Data backups
+- Data are replicated within the data warehouse cluster & backed up to S3
+- Redshift attempts to maintain at least 3 copies of data
+- Automated backups are retained for 1-35 days
 
+## <a href="https://aws.amazon.com/elasticache/faqs/">Amazon ElastiCache FAQ</a>
+#### What is Amazon ElastiCache?
+- In-memory caching to improve latency & throughput for read-heavy application workloads
+- AWS automates failure detection, recovery & software patching
+- Provides detailed monitoring metrics
 
+#### Amazon ElastiCache & VPC
+- ElastiCache could be placed in a VPC when running a public-facing web application while still maintaining non-publicly accessible backend servers in a private subnet
+- Public-facing subnets could be created for webservers that require access to the Internet
+- Backend infrastructure including RDS instances & ElastiCache clusters should be placed in private-facing subnets 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### Types of caching
+- Memcached
+- Redis
