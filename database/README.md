@@ -74,7 +74,7 @@ S3
 
 #### DB parameter groups
 - Custom DB parameter groups can be used to run DB instances with custom-specified engine configuration values
-- Once a DB instance is associated with the paramter group, it uses it to get all the parameter updates to the group
+- Once a DB instance is associated with the parameter group, it uses it to get all the parameter updates to the group
 
 #### How to monitor configuration of RDS resources?
 <a href="https://aws.amazon.com/config/">AWS Config</a> can be used to continuously record configurations changes to RDS DB instances, subnet groups, snapshots, security groups & event subscriptions
@@ -134,7 +134,7 @@ CPU, memory, file system, disk I/O
 #### What is Amazon RDS Proxy?
 Fully managed, highly available, easy to use database proxy that enables applications to 
 - Improve scalability by pooling & sharing database connections
-- Improve availability by reducing data base failover times
+- Improve availability by reducing database failover times
 - Preserving application connections during failovers
 - Improve security by optionally enforcing IAM authentication to databases
 
