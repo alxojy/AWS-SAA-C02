@@ -59,7 +59,7 @@ IAM manages permissions to who can make changes to DNS records
 #### Can multiple IP addresses be associated with a single record?
 Yes. Multple IP addresses can be listed for an A record
 
-### DNS [routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html)
+#### DNS [routing policies](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html)
 Policy | Use cases
 ----|----
 Simple routing | - Route traffic to a single resource <br> - Cannot create multiple records with the same name & type <br> - Can specify multiple IP addresses 
