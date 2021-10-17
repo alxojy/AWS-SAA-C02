@@ -169,7 +169,7 @@ Fully managed, highly available, easy to use database proxy that enables applica
 Unlike RDS, there is no performance impact when taking snapshots
 
 #### What is the recovery path if DB fails?
-- Amazon Aurora automatically maintains 6 copies of data across 3 AZs & will automatically attempt to recover the DB in a healthy AZ with no data loss.
+- Amazon Aurora automatically maintains 6 copies of data across 3 AZs & will automatically attempt to recover the DB in a healthy AZ with no data loss
 - In the unlikely event that the data is unavailable across all 6 copies, the DB can be restored from a DB snapshot
 
 #### What happens to the automated backups & DB snapshots if the DB instance is deleted?
@@ -207,7 +207,7 @@ Failover is automatically handled by Amazon Aurora
   - Automatically recreate the DB instance in a different AZ
 - No Amazon Aurora Replica/ Aurora Serverless
   - Aurora attempts to create a new DB instance in the same AZ
-  - Done in best effort basis & may not succeed (ie. entire AZ is down)
+  - Done in best effort basis & may not succeed (ie. entire AZ is down)    
 *Note: Disaster recovery across regions is manual. If the primary region becomes unavailable, a secondary region can be promoted to take on full reads & writes. The application needs to point to the updated promoted region*
 
 #### Amazon Aurora <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html">Multi-Master</a>
@@ -239,7 +239,7 @@ No, it is currently not supported. A new DB instance with encryption must be cre
 Restore a snapshot taken from an existing Aurora provisioned cluster into an Aurora Serverless DB cluster
 
 #### How to connect to an Aurora Serverless DB cluster?
-It can be accessed from within a client application running the same VPC. The Aurora Serverless DB cluster cannot be given a public IP address
+It can be accessed from within a client application running in the same VPC. The Aurora Serverless DB cluster cannot be given a public IP address
 
 ### <a href="https://aws.amazon.com/rds/aurora/parallel-query/">Amazon Aurora Parallel Query</a>
 #### What is Amazon Aurora Parallel Query?
