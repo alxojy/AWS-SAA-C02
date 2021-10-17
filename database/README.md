@@ -208,6 +208,7 @@ Failover is automatically handled by Amazon Aurora
 - No Amazon Aurora Replica/ Aurora Serverless
   - Aurora attempts to create a new DB instance in the same AZ
   - Done in best effort basis & may not succeed (ie. entire AZ is down)    
+
 *Note: Disaster recovery across regions is manual. If the primary region becomes unavailable, a secondary region can be promoted to take on full reads & writes. The application needs to point to the updated promoted region*
 
 #### Amazon Aurora <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html">Multi-Master</a>
