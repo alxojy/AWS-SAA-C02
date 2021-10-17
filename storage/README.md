@@ -1,6 +1,12 @@
 # Storage
+#### Contents
+- [Amazon S3](https://github.com/alxojy/AWS-SAA-C02/tree/main/storage#amazon-s3)
+- [Amazon EBS](https://github.com/alxojy/AWS-SAA-C02/tree/main/storage#amazon-ebs-faq)
+- [Amazon EFS](https://github.com/alxojy/AWS-SAA-C02/tree/main/storage#amazon-efs-faq)
+- [AWS Storage Gateway](https://github.com/alxojy/AWS-SAA-C02/tree/main/storage#aws-storage-gateway-faq)
+- [Amazon FSx](https://github.com/alxojy/AWS-SAA-C02/tree/main/storage#amazon-fsx-for-windows-file-server-faq)
 
-## <a href="https://aws.amazon.com/s3/faqs/">Amazon S3</a>
+## <a href="https://aws.amazon.com/s3/faqs/">Amazon S3 FAQ</a>
 #### What is Amazon S3?
 - Quickly accessible, always available & secure object storage
 - Unlimited storage
