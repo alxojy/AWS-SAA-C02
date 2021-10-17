@@ -465,7 +465,39 @@ Optimized for large streaming workloads that require high throughput
 - Offers encryption of EBS data volumes, boot volumes and snapshots
 - Encryption at rest supports Amazon-managed keys or keys created & managed using KMS
 
+## <a href="https://aws.amazon.com/efs/faq/">Amazon EFS FAQ</a>
+#### What is Amazon Elastic File System?
+- Serverless file system that is easy to setup & scale in the cloud
+- Accessible to EC2, ECS, EKS, Fargate & Lambda
+- Scale from gigabytes to perabytes without needing to provision storage
+- Can be accessed by 100s to 100,000s of compute instances at the same time
+- Provides a file system interface & file system semantics (ie. strong consistency & file locking) 
+- By default, all file system objects are redundantly stored across multiple AZs
 
+#### Use cases
+- Big data & analytics
+- Media processing workflows
+- Content management
+- Web serving
+- Home directories
+
+#### EFS vs S3 vs EBS
+EFS | S3 | EBS
+----|----|----
+File storage service for Amazon compute & on premises servers | Object storage service | Block level storage 
+
+#### What EC2 instance types & AMIs are compatible with EFS?
+EFS is compatible with all Linux-based AMIs for EC2
+
+#### How to load data into a file system?
+<a href="https://aws.amazon.com/datasync/">AWS DataSync</a> allows data from existing file systems to be securely synced to EFS
+- Works over any network connection including AWS Direct Connect & AWS VPN
+- Can be used to copy files between 2 EFS file systems including cross region & cross account file systems
+
+#### How to control access to EFS file system?
+- VPC security groups & IAM can be used to control which EC2 instances have access to EFS
+- IAM roles can be used to limit access to other AWS accounts
+- For on-premises datacenters, AWS Direct Connect or AWS VPN must be installed
 
 
 
