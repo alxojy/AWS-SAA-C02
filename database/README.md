@@ -249,8 +249,30 @@ Distribute computational load of a single query across 1000s of CPUs in Aurora's
 #### Uses cases
 Analytical workloads requiring fresh data & good query performance
 
+## <a href="https://aws.amazon.com/dynamodb/faqs/">Amazon DynamoDB FAQ</a>
+#### What is Amazon DynamoDB?
+- Managed nonrelational (NoSQL) database service
+- AWS handles hardward provisioning, setup & configuration, throughput capacity planning, replication, software patching, cluster scaling
+- Synchronously replicates data across 3 facilities in an AWS region
 
+#### Consistency model
+- Eventually consistent reads 
+  - Might not reflect the results of a recently completed write
+  - Maximizes read throughput
+- Strongly consistent reads
+  - Returns a result that reflects all writes that received a successful response before the read
+- ACID
 
+#### <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html">DynamoDB Auto Scaling</a>
+|![dynamodb-autoscaling](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/images/auto-scaling.png)|
+|:---:|
+|High-level overview|
+1. Create an application auto scaling policy for the DynamoDB table
+2. DynamoDB publishes the consumed capacity metrics to Amazon CloudWatch
+3. If the table's consume capacity exceeds the target (or falls below the target) for a specified duration, CloudWatch triggers an alarm & notifications are sent with SNS
+4. The CloudWatch alarm invokes application auto scaling to evaluate the scaling policy
+5. Application auto scaling issues an `UpdateTable` request to adjust the table's provisioned throughput
+6. DynamoDB processes the `UpdateTable` request & dynamically adjusts the table's provisioned throughput capacity to reach the target 
 
 
 
