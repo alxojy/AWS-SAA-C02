@@ -1,4 +1,7 @@
 # Application Integration
+#### Contents
+- [Amazon SNS](https://github.com/alxojy/AWS-SAA-C02/tree/main/app-integration#amazon-sns-faq)
+- [Amazon SQS](https://github.com/alxojy/AWS-SAA-C02/tree/main/app-integration#amazon-sqs-faq)
 
 ## <a href="https://aws.amazon.com/sns/faqs/">Amazon SNS FAQ</a>
 #### What is Amazon SNS?
