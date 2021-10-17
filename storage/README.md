@@ -228,11 +228,21 @@ Versioning's MFA delete capability can be used to permanently delete a version o
 #### S3 object lock
 - Prevents an object version from being deleted or overwritten for a fixed amount of time (retain until dates) or indefinitely (legal hold prevents an object version from being modified until it is explicitly removed)
 - Used if regulatory requirements specify that data must be WORM protected
+- Two modes
+  - Governance: only AWS accounts with specific IAM permissions are able to remove WORM protection from an object version
+  - Compliance: WORM protection cannot be removed by any user, including the root user
 
+#### <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudwatch-monitoring.html">S3 CloudWatch metrics</a>
+- Enable generation of 1 minute CloudWatch request metrics for S3 bucket
+- Configure filters for metrics using a prefix/ object tag or access point
 
+#### S3 lifecycle management
+Provides the ability to define the lifecycle of the object & migrate objects from 1 storage class to another
+![](https://docs.aws.amazon.com/AmazonS3/latest/userguide/images/lifecycle-transitions-v2.png)
 
-
-
+### Analytics
+- #### <a href="https://github.com/alxojy/AWS-SAA-C02/tree/main/analytics#athena-faq">Amazon Athena</a>
+- #### <a href="https://github.com/alxojy/AWS-SAA-C02/tree/main/database#what-is-redshift-spectrum">Amazon Redshift Spectrum</a>
 
 
 
