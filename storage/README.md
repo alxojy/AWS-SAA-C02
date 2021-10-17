@@ -271,27 +271,115 @@ Yes
 Yes
 
 ## <a href="https://aws.amazon.com/ebs/faqs/">Amazon EBS FAQ</a>
+### <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a>
+#### Solid state drives (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives">SSD</a>)
+Optimized for transactional workloads involving frequent/ random read/ write operations with small I/O size
 
 
+<table>
+  <thead>
+   <tr>
+      <th colspan="2" align="center" style="text-align: center;">General Purpose SSD</th>
+      <th colspan="3" align="center" style="text-align: center;">Provisioned IOPS SSD</th>
+   </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <td><b>Volume type</b></td>
+     <td><code class="code">gp3</code></td>
+     <td><code class="code">gp2</code></td>
+     <td><code class="code">io2</code>&nbsp;Block Express
+     </td>
+     <td><code class="code">io2</code>
+     </td>
+     <td><code class="code">io1</code></td>
+    </tr>
+    <tr>
+       <td><b>Durability</b></td>
+       <td>99.8% - 99.9% durability (0.1% - 0.2% annual failure rate)</td>
+       <td>99.8% - 99.9% durability (0.1% - 0.2% annual failure rate)</td>
+       <td>99.999% durability (0.001% annual failure rate)</td>
+       <td>99.999% durability (0.001% annual failure rate)</td>
+       <td>99.8% - 99.9% durability (0.1% - 0.2% annual failure rate)</td>
+    </tr>
+    <tr>
+       <td><b>Use cases</b></td>
+       <td colspan="2">
+          <div class="itemizedlist">
+             <ul class="itemizedlist" type="disc">
+                <li class="listitem">
+                   <p>Low-latency interactive apps</p>
+                </li>
+                <li class="listitem">
+                   <p>Development and test environments</p>
+                </li>
+             </ul>
+          </div>
+       </td>
+       <td>
+          <p>Workloads that require:</p>
+          <div class="itemizedlist">
+             <ul class="itemizedlist" type="disc">
+                <li class="listitem">
+                   <p>Sub-millisecond latency</p>
+                </li>
+                <li class="listitem">
+                   <p>Sustained IOPS performance</p>
+                </li>
+                <li class="listitem">
+                   <p>More than 64,000 IOPS or 1,000 MiB/s of throughput</p>
+                </li>
+             </ul>
+          </div>
+       </td>
+       <td colspan="2">
+          <p>Workloads that require:</p>
+          <div class="itemizedlist">
+             <ul class="itemizedlist" type="disc">
+                <li class="listitem">
+                   <p>Sustained IOPS performance or more than
+                      16,000 IOPS
+                   </p>
+                </li>
+                <li class="listitem">
+                   <p>I/O-intensive database workloads</p>
+                </li>
+             </ul>
+          </div>
+       </td>
+    </tr>
+    <tr>
+       <td><b>Volume size</b></td>
+       <td colspan="2">1 GiB - 16 TiB </td>
+       <td>4 GiB - 64 TiB</td>
+       <td colspan="2">4 GiB - 16 TiB </td>
+    </tr>
+    <tr>
+       <td><b>Max IOPS per volume</b> (16 KiB I/O)
+       </td>
+       <td colspan="2">16,000</td>
+       <td>256,000</td>
+       <td colspan="2">64,000</td>
+    </tr>
+    <tr>
+       <td><b>Max throughput per volume</b></td>
+       <td>1,000 MiB/s</td>
+       <td>250 MiB/s *</td>
+       <td>4,000 MiB/s</td>
+       <td colspan="2">1,000 MiB/s</td>
+    </tr>
+    <tr>
+       <td><b>Amazon EBS Multi-attach</b></td>
+       <td colspan="2">Not supported</td>
+       <td colspan="3">Supported</td>
+    </tr>
+    <tr>
+       <td><b>Boot volume</b></td>
+       <td colspan="5">Supported</td>
+    </tr>
+  </tbody>
+</table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### Hard disk drives (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives">HDD</a>)
+Optimized for large streaming workloads that require high throughput
 
