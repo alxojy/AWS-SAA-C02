@@ -31,7 +31,7 @@ An AWS region is initially specified for the S3 bucket. For
 - Recommended for objects larger than 100MB
 - Required for objects larger than 5GB
 - Advantages
-  - Improved throughput: Upload im parallel
+  - Improved throughput: Upload in parallel
   - Quick recovery from network issues: Minimizes impact of restarting a failed upload
   - Pause and resume object uploads
 
@@ -69,7 +69,7 @@ Transfer Acceleration | CloudFront PUT/POST
 Optimizes TCP & supports higher throughput | For objects smaller than 1GB
 
 #### S3 Transfer Acceleration with AWS Direct Connect
-AWS Direct Connect is a private network between on-premise & AWS. Some customers use S3 Transfer Acceleration over the public Internet where network conditions have poor throughput 
+AWS Direct Connect is a private network between on-premise & AWS. Some customers use S3 Transfer Acceleration over the public Internet when network conditions have poor throughput 
 
 ### <a href="https://aws.amazon.com/s3/faqs/#Security">Security</a>
 #### How secure is data stored in S3?
@@ -144,7 +144,7 @@ Versioning's MFA delete capability can be used to permanently delete a version o
 - Supports SSL for data in transit & encryption of data at rest
   
 #### <a href="https://aws.amazon.com/s3/faqs/#S3_One_Zone-Infrequent_Access_.28S3_One_Zone-IA.29">S3 One Zone-Infrequent Access</a>
-- Store objects in a single AZ (20% less cost than S3 IA)
+- Store objects in a single AZ (20% less cost than S3-IA)
 - Same features as S3-IA
 
 #### <a href="https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier">S3 Glacier</a>
@@ -484,7 +484,7 @@ Optimized for large streaming workloads that require high throughput
 #### EFS vs S3 vs EBS
 EFS | S3 | EBS
 ----|----|----
-File storage service for Amazon compute & on premises servers | Object storage service | Block level storage 
+File storage service for Amazon compute & on premises servers | Object storage service | Block level storage on AWS
 
 #### What EC2 instance types & AMIs are compatible with EFS?
 EFS is compatible with all Linux-based AMIs for EC2
@@ -502,7 +502,7 @@ EFS is compatible with all Linux-based AMIs for EC2
 ## <a href="https://aws.amazon.com/storagegateway/faqs/">AWS Storage Gateway FAQ</a>
 #### What is AWS Storage Gateway?
 - Provides on-premises access to unlimited cloud storage
-- Integrates with S3, FSx, IAM fo access control, KMS for encryption, CloudWatch for monitoring, CloudTrail for logging
+- Integrates with S3, FSx, IAM for access control, KMS for encryption, CloudWatch for monitoring, CloudTrail for logging
 
 ![](https://d1.awsstatic.com/cloud-storage/product-page-diagram_AWS-Storage-Gateway_HIW%402x.6df96d96cdbaa61ed3ce935262431aabcfb9e52d.png)
 
