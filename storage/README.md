@@ -383,4 +383,79 @@ Optimized for transactional workloads involving frequent/ random read/ write ope
 
 #### Hard disk drives (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives">HDD</a>)
 Optimized for large streaming workloads that require high throughput
-
+<table id="w652aac27c33c13c19c15b9">
+  <thead>
+     <tr>
+        <th></th>
+        <th>Throughput Optimized HDD</th>
+        <th>Cold HDD</th>
+     </tr>
+  </thead>
+  <tbody><tr>
+     <td><b>Volume type</b></td>
+     <td><code class="code">st1</code></td>
+     <td><code class="code">sc1</code></td>
+  </tr>
+  <tr>
+     <td><b>Durability</b></td>
+     <td>99.8% - 99.9% durability (0.1% - 0.2% annual failure rate)</td>
+     <td>99.8% - 99.9% durability (0.1% - 0.2% annual failure rate)</td>
+  </tr>
+  <tr>
+     <td><b>Use cases</b></td>
+     <td>
+        <div class="itemizedlist">
+           <ul class="itemizedlist" type="disc">
+              <li class="listitem">
+                 <p>Big data</p>
+              </li>
+              <li class="listitem">
+                 <p>Data warehouses</p>
+              </li>
+              <li class="listitem">
+                 <p>Log processing</p>
+              </li>
+           </ul>
+        </div>
+     </td>
+     <td>
+        <div class="itemizedlist">
+           <ul class="itemizedlist" type="disc">
+              <li class="listitem">
+                 <p>Throughput-oriented storage for data that is infrequently accessed</p>
+              </li>
+              <li class="listitem">
+                 <p>Scenarios where the lowest storage cost is important</p>
+              </li>
+           </ul>
+        </div>
+     </td>
+  </tr>
+  <tr>
+     <td><b>Volume size</b></td>
+     <td>125 GiB - 16 TiB</td>
+     <td>125 GiB - 16 TiB </td>
+  </tr>
+  <tr>
+     <td><b>Max IOPS per volume</b> (1 MiB I/O)
+     </td>
+     <td>500</td>
+     <td>250</td>
+  </tr>
+  <tr>
+     <td><b>Max throughput per volume</b></td>
+     <td>500 MiB/s</td>
+     <td>250 MiB/s</td>
+  </tr>
+  <tr>
+     <td><b>Amazon EBS Multi-attach</b></td>
+     <td>Not supported</td>
+     <td>Not supported</td>
+  </tr>
+  <tr>
+     <td><b>Boot volume</b></td>
+     <td>Not supported</td>
+     <td>Not supported</td>
+  </tr>
+  </tbody>
+</table>
