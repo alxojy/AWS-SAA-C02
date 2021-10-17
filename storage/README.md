@@ -499,17 +499,25 @@ EFS is compatible with all Linux-based AMIs for EC2
 - IAM roles can be used to limit access to other AWS accounts
 - For on-premises datacenters, AWS Direct Connect or AWS VPN must be installed
 
+## <a href="https://aws.amazon.com/storagegateway/faqs/">AWS Storage Gateway FAQ</a>
+#### What is AWS Storage Gateway?
+- Provides on-premises access to unlimited cloud storage
+- Integrates with S3, FSx, IAM fo access control, KMS for encryption, CloudWatch for monitoring, CloudTrail for logging
 
+![](https://d1.awsstatic.com/cloud-storage/product-page-diagram_AWS-Storage-Gateway_HIW%402x.6df96d96cdbaa61ed3ce935262431aabcfb9e52d.png)
 
+#### AWS Storage Gateway use cases
+- Move backups & archives to the cloud
+- Reduce on-premises storage with cloud-backed file shares
+- Provide on-premises applications low latency access to data stored in AWS
+- Data lake access for pre & post processing workflows
 
-
-
-
-
-
-
-
-
-
-
-
+#### How does AWS Storage Gateway provide on-premises applications access to cloud storage?
+- <a href="https://aws.amazon.com/storagegateway/file/s3/">Amazon S3 File Gateway</a> enables storing & retrieving objects using NFS & SMB
+- <a href="https://aws.amazon.com/storagegateway/file/fsx/">Amazon FSx File Gateway</a> enables storing & retrieving files using Amazon FSx for Windows File Server using SMB
+- <a href="https://aws.amazon.com/storagegateway/features/#volume-gateway">Volume Gateway</a> provides block storage for on-premises applications using iSCSI connectivity
+  - Data on the volumes is stored in Amazon S3 
+  - Point in time copies of volumes can be taken & stored as Amazon EBS snapshots
+  - Copies of volumes can be taken & their retention can be managed using AWS Backup
+  - Restore EBS snapshots to a Volume Gateway volume or an EBS volume
+- <a href="https://aws.amazon.com/storagegateway/vtl/">Tape Gateway</a>
