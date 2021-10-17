@@ -459,3 +459,25 @@ Optimized for large streaming workloads that require high throughput
   </tr>
   </tbody>
 </table>
+
+### Encryption
+#### What is Amazon EBS encryption?
+- Offers encryption of EBS data volumes, boot volumes and snapshots
+- Encryption at rest supports Amazon-managed keys or keys created & managed using KMS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
