@@ -27,6 +27,14 @@ An AWS region is initially specified for the S3 bucket. For
 - Addresses specific legal & regulatory requirements
 - Reduce storage costs by selecting a cheaper region
 
+#### <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Multipart upload</a>
+- Recommended for objects larger than 100MB
+- Required for objects larger than 5GB
+- Advantages
+  - Improved throughput: Upload im parallel
+  - Quick recovery from network issues: Minimizes impact of restarting a failed upload
+  - Pause and resume object uploads
+
 ### Billing
 #### How is S3 charged?
 - No data transfer charge for COPY requests within an S3 region
@@ -241,14 +249,26 @@ Provides the ability to define the lifecycle of the object & migrate objects fro
 ![](https://docs.aws.amazon.com/AmazonS3/latest/userguide/images/lifecycle-transitions-v2.png)
 
 ### Analytics
-- #### <a href="https://github.com/alxojy/AWS-SAA-C02/tree/main/analytics#athena-faq">Amazon Athena</a>
-- #### <a href="https://github.com/alxojy/AWS-SAA-C02/tree/main/database#what-is-redshift-spectrum">Amazon Redshift Spectrum</a>
+#### <a href="https://github.com/alxojy/AWS-SAA-C02/tree/main/analytics#athena-faq">Amazon Athena</a>
+#### <a href="https://github.com/alxojy/AWS-SAA-C02/tree/main/database#what-is-redshift-spectrum">Amazon Redshift Spectrum</a>
 
+### Replication
+#### What is Amazon S3 Cross Region Replication (<a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html#crr-scenario">CRR</a>)?
+- Automatically replicates data between buckets across different regions
+- Replication can be at a bucket level, shared prefix level or object level using S3 object tags
+- For lower-latency data access in different geographic regions
+- For compliance requirements to store copies of data hundreds of miles apart
 
+#### What is Amazon S3 Same Region Replication (SRR)?
+- Automatically replicates data between buckets within the same region
+- Replication can be set at a bucket level, shared prefix level or object level using S3 object tags
+- For compliance requirements by keeping a copy of data in a separate AWS account in the same region 
 
-#### <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html">Multipart upload</a>
-- Recommended for objects larger than 100MB
-- Required for objects larger than 5GB
+#### Can 1 bucket be replicated to more than 1 destination bucket?
+Yes
+
+#### Is two way replication possible?
+Yes
 
 
 
