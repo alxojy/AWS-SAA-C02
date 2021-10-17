@@ -270,6 +270,8 @@ Yes
 #### Is two way replication possible?
 Yes
 
+## <a href="https://aws.amazon.com/ebs/faqs/">Amazon EBS FAQ</a>
+
 
 
 
