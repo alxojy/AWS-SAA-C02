@@ -1,4 +1,4 @@
-# Compute
+# Content Delivery
 #### Contents
 
 ## <a href="https://aws.amazon.com/api-gateway/faqs/">Amazon API Gateway FAQ</a>
@@ -27,4 +27,4 @@
 - WebSocket
 
 #### How to use API Gateway with VPC?
-Proxy requests to backend HTTP/HTTPS resources running in VPC by setting up ![Private Integrations](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-private-integration.html) using VPC links
+Proxy requests to backend HTTP/HTTPS resources running in VPC by setting up [Private Integrations](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-private-integration.html) using VPC links
