@@ -521,3 +521,12 @@ EFS is compatible with all Linux-based AMIs for EC2
   - Copies of volumes can be taken & their retention can be managed using AWS Backup
   - Restore EBS snapshots to a Volume Gateway volume or an EBS volume
 - <a href="https://aws.amazon.com/storagegateway/vtl/">Tape Gateway</a>
+
+## <a href="https://aws.amazon.com/fsx/windows/faqs/">Amazon FSx for Windows File Server FAQ</a>
+#### What is Amazon FSx for Windows File Server?
+- Provides fully managed, highly reliable, and scalable file storage that is accessible over the Service Message Block (SMB) protocol
+- Built on Windows Server with features such as user quotas, end-user file restore & Microsoft Active Directory (AD) integration
+
+## <a href="https://aws.amazon.com/fsx/lustre/faqs/">Amazon FSx for Lustre FAQ</a>
+#### What is Amazon FSx for Lustre?
+Managed file system for workloads that require fast storage such as ML, HPC, video processing, financial modeling & genome sequencing
