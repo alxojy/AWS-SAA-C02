@@ -279,6 +279,7 @@ Optimized for transactional workloads involving frequent/ random read/ write ope
 <table>
   <thead>
    <tr>
+     <th/>
       <th colspan="2" align="center" style="text-align: center;">General Purpose SSD</th>
       <th colspan="3" align="center" style="text-align: center;">Provisioned IOPS SSD</th>
    </tr>
