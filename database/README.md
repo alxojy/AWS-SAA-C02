@@ -157,6 +157,113 @@ Fully managed, highly available, easy to use database proxy that enables applica
   - Choice to enforce IAM based authentication
   - Allows centrally managed database credentials through AWS Secrets Manager
 
+## <a href="https://aws.amazon.com/rds/aurora/faqs/">Amazon Aurora FAQ</a>
+#### What is Amazon Aurora?
+- Managed relational database service that is MySQL & PostgreSQL compatible
+- 5x performance of MySQL & 3x performance of PostgreSQL
+- 2 copies of the database volume are replicated across 3 AZs = 6 copies total
+- Minimum storage: 10GB, maximum storage: 128TB
+
+### Backup & restore
+#### DB snapshots
+Unlike RDS, there is no performance impact when taking snapshots
+
+#### What is the recovery path if DB fails?
+- Amazon Aurora automatically maintains 6 copies of data across 3 AZs & will automatically attempt to recover the DB in a healthy AZ with no data loss.
+- In the unlikely event that the data is unavailable across all 6 copies, the DB can be restored from a DB snapshot
+
+#### What happens to the automated backups & DB snapshots if the DB instance is deleted?
+- A final DB snapshot can be created & retained
+- Automated backups are deleted
+
+#### Can snapshots be shared across different regions?
+No
+
+### High availability & replication 
+#### Fault tolerance to disk failures
+- Automatically divides the DB volume in 10GB segments spread across many disks. Each 10GB chunk of database volume is replicated 6 ways, across 3 AZs
+- Transparently handle the loss of up to 2 copies of data without affecting DB write availability & 3 copies of data without affecting DB read availability
+- Self healing; data blocks & disks are continuously scanned for errors & repaired automatically
+
+#### Amazon Aurora Replicas
+- Share the same underlying volume as the primary instance in the same AWS region
+- Asynchronous replication for up to 15 replicas
+- In-region replication
+- Can be promoted to primary in the event of a primary DB instance failure
+- For cross-region replication, use MySQL read replicas or native logical replication in each DB engine
+
+#### <a href="https://aws.amazon.com/rds/aurora/global-database/">Aurora Global Database</a>
+- For physical replication across different regions
+- Supports replication with less than 1s latency
+- Uses dedicated infrastructure that can replicate to up to 5 secondary regions
+- For low latency global reads & disaster recovery in the event of a region-wide failure
+
+#### What happens during failover & how long does it take?
+Failover is automatically handled by Amazon Aurora
+- Amazon Aurora Replica in the same/ different AZ
+  - Aurora flips the CNAME for the DB instance to point at the healthy replica
+  - Completes within 30s
+- Aurora Serverless
+  - Automatically recreate the DB instance in a different AZ
+- No Amazon Aurora Replica/ Aurora Serverless
+  - Aurora attempts to create a new DB instance in the same AZ
+  - Done in best effort basis & may not succeed (ie. entire AZ is down)
+*Note: Disaster recovery across regions is manual. If the primary region becomes unavailable, a secondary region can be promoted to take on full reads & writes. The application needs to point to the updated promoted region*
+
+#### Amazon Aurora <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html">Multi-Master</a>
+![aurora-multi-master](https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2019/06/11/B.jpg)
+
+### Security
+#### Amazon Aurora and VPC
+All Aurora DB instances must be created in a VPC
+
+#### Encrypting data in transit
+Aurora uses SSL to secure the connection between the DB instance & application
+
+#### Encrypting data at rest
+- Aurora allows encrypting the DB using keys managed by KMS
+- Data stored, its automated backups, snapshots and replicas in the same cluster are encrypted
+
+#### Can an unencrypted database be encrypted?
+No, it is currently not supported. A new DB instance with encryption must be created & the data from the unencrypted database must be migrated to it
+
+### <a href="https://aws.amazon.com/rds/aurora/serverless/">Amazon Aurora Serverless</a>
+#### What is Amazon Aurora serverless?
+- Automatically starts up, shuts down & scales capacity based on the application's needs
+- Runs the database in the cloud without managing the database capacity
+- High scalable; scale from 100s to 100,000s of transactions in less than 1s
+- Highly available with features such as Global Database, Multi-AZ, read replicas, cloning
+- Used for variable/ unpredictable workloads
+
+#### How to migrate an existing Aurora DB cluster to Aurora Serverless?
+Restore a snapshot taken from an existing Aurora provisioned cluster into an Aurora Serverless DB cluster
+
+#### How to connect to an Aurora Serverless DB cluster?
+It can be accessed from within a client application running the same VPC. The Aurora Serverless DB cluster cannot be given a public IP address
+
+### <a href="https://aws.amazon.com/rds/aurora/parallel-query/">Amazon Aurora Parallel Query</a>
+#### What is Amazon Aurora Parallel Query?
+Distribute computational load of a single query across 1000s of CPUs in Aurora's storage layer
+
+#### Uses cases
+Analytical workloads requiring fresh data & good query performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
