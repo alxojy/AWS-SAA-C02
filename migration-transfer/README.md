@@ -1,6 +1,6 @@
 # Migration & Transfer
 #### Contents
-- [AWS DataSync](https://github.com/alxojy/AWS-SAA-C02/tree/main/migration-transfer#aws-datasync)
+- [AWS DataSync](https://github.com/alxojy/AWS-SAA-C02/tree/main/migration-transfer#aws-datasync-faq)
 - [AWS Migration Hub](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-migration-hub-faq)
 - [AWS Server Migration Service (SMS)](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-server-migration-service-faq)
 - [AWS Database Migration Service (DMS)](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-database-migration-service-faq)
@@ -41,13 +41,13 @@ To transfer data from existing storage systems to AWS | For high throughput duri
 #### What is AWS Migration Hub?
 - Collect & view data about on-premises resources & track the progress of those applications during migration to AWS
 - Provides a single place to discover existing servers & track the status of each application migration
-- Integrates tools such as AWS Application Migration Service, AWS Server Migration Service, AWS Database Migration Service into 1 single tool
+- Integrates tools such as AWS Application Migration Service, AWS Server Migration Service, AWS Database Migration Service into 1 single service
 
 ## [AWS Server Migration Service FAQ](https://aws.amazon.com/server-migration-service/faqs/)
 #### What is AWS SMS?
 - Incremental, snapshot-based replication & enables cutover windows measured in hours
 - Each server volume replicated is saved as a new AMI which can be launched as an EC2 instance
-- If using application gruopings, SMS will launch the servers in a CloudFormation stack 
+- If using application groupings, SMS will launch the servers in a CloudFormation stack 
 - Server volumes are encrypted in transit by TLS
 
 ## [AWS Database Migration Service FAQ](https://aws.amazon.com/dms/faqs/)
@@ -60,7 +60,7 @@ Yes. AWS DMS can be used for both one-time migration into RDS and EC2-based data
 #### What sources & targets does AWS DMS support?
 Either the source or target must reside in RDS or on EC2
 
-#### What source & targets does AWS Schema Conversion Tool (SCT) support?
+#### What sources & targets does AWS Schema Conversion Tool (SCT) support?
 It supports a range of database & data warehouse conversions listed below
 - Copy a database schema from a source to a target
 - Convert a database or data warehouse schema
@@ -95,4 +95,4 @@ Yes. AWS DMS can read and write from and to encrypted databases
 - Encryption is done on the Snowball device while the encryption keys are managed by KMS
 
 #### How to transfer data to Snowball Edge?
-- Transfer data from local sources to Snowball via an S3-compatible endpoint or NFS file interface
+Transfer data from local sources to Snowball via an S3-compatible endpoint or NFS file interface
