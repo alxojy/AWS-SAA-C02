@@ -2,8 +2,8 @@
 #### Contents
 - [AWS DataSync](https://github.com/alxojy/AWS-SAA-C02/tree/main/migration-transfer#aws-datasync)
 - [AWS Migration Hub](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-migration-hub-faq)
-- [AWS Server Migration Service (SMS)]()
-- [AWS Database Migration Service (DMS)]()
+- [AWS Server Migration Service (SMS)](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-server-migration-service-faq)
+- [AWS Database Migration Service (DMS)](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-database-migration-service-faq)
 - [AWS Transfer Family]()
 - [AWS Snowball](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-snowball-faq)
 
