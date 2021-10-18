@@ -1,7 +1,7 @@
 # Migration & Transfer
 #### Contents
 - [AWS DataSync](https://github.com/alxojy/AWS-SAA-C02/tree/main/migration-transfer#aws-datasync)
-- [AWS Migration Hub]()
+- [AWS Migration Hub](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-migration-hub-faq)
 - [AWS Server Migration Service (SMS)]()
 - [AWS Database Migration Service (DMS)]()
 - [AWS Transfer Family]()
@@ -42,6 +42,43 @@ To transfer data from existing storage systems to AWS | For high throughput duri
 - Collect & view data about on-premises resources & track the progress of those applications during migration to AWS
 - Provides a single place to discover existing servers & track the status of each application migration
 - Integrates tools such as AWS Application Migration Service, AWS Server Migration Service, AWS Database Migration Service into 1 single tool
+
+## [AWS Server Migration Service FAQ](https://aws.amazon.com/server-migration-service/faqs/)
+#### What is AWS SMS?
+- Incremental, snapshot-based replication & enables cutover windows measured in hours
+- Each server volume replicated is saved as a new AMI which can be launched as an EC2 instance
+- If using application gruopings, SMS will launch the servers in a CloudFormation stack 
+- Server volumes are encrypted in transit by TLS
+
+## [AWS Database Migration Service FAQ](https://aws.amazon.com/dms/faqs/)
+#### Will AWS DMS convert Oracle PL/SQL and SQL Server T-SQL code to Amazon Aurora or MySQL or PostgreSQL stored procedures?
+Yes. Part of DMS is the free AWS Schema Conversion Tool (SCT) that automates the conversion of Oracle PL/SQL and SQL Server T-SQL code to equivalent code in Amazon Aurora or MySQL or PostgreSQL
+
+#### In addition to one-time data migration, can AWS DMS be used for continuous data replication?
+Yes. AWS DMS can be used for both one-time migration into RDS and EC2-based databases as well as for continuous data replication. DMS capture changes in the source database & apply them in a transactionally-consistent way to the target. However, for ongoing continuous replication, it is preferable to use Multi-AZ replication for high availability
+
+#### What sources & targets does AWS DMS support?
+Either the source or target must reside in RDS or on EC2
+
+#### What source & targets does AWS Schema Conversion Tool (SCT) support?
+It supports a range of database & data warehouse conversions listed below
+- Copy a database schema from a source to a target
+- Convert a database or data warehouse schema
+- Analyze a database to determine the conversion complexity
+- Analyze a database to determine any possible restrictions to running on RDS
+- Analyze a database to determine if a license downgrade is possible
+- Convert embedded SQL code in an application
+- Migrate data warehouse data to Amazon Redshift
+
+#### Data migration steps using AWS DMS
+1. Create a target database
+2. Migrate the database schema
+3. Setup the data replication process
+4. Initiate the full load & a change data capture & apply
+5. Switchover of production environment to the new database once the target database is caught up with the source database
+
+#### Can DMS replicate data from encrypted data sources?
+Yes. AWS DMS can read and write from and to encrypted databases
 
 ## [AWS Snowball FAQ](https://aws.amazon.com/snowball/faqs/)
 #### What is AWS Snowball?
