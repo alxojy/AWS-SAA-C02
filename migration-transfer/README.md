@@ -4,7 +4,7 @@
 - [AWS Migration Hub](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-migration-hub-faq)
 - [AWS Server Migration Service (SMS)](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-server-migration-service-faq)
 - [AWS Database Migration Service (DMS)](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-database-migration-service-faq)
-- [AWS Transfer Family]()
+- [AWS Transfer Family](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-transfer-family-faq)
 - [AWS Snowball](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-snowball-faq)
 
 ## [AWS DataSync FAQ](https://aws.amazon.com/datasync/faqs/)
@@ -79,6 +79,12 @@ It supports a range of database & data warehouse conversions listed below
 
 #### Can DMS replicate data from encrypted data sources?
 Yes. AWS DMS can read and write from and to encrypted databases
+
+## [AWS Transfer Family FAQ](https://aws.amazon.com/aws-transfer-family/faqs/)
+#### What is AWS Transfer Family?
+- Offers fully managed support for the transfer of files over SFTP, FTPS and FTP directly into and out of S3 or EFS
+- Supports multiple protocols for business to business file transfers so data can easily & securely be exchanged across stakeholders, third part vendors, business partners or customers
+- Remove the need to host & manage own file transfer service which includes operating & managing infrastructure, patching servers & monitoring
 
 ## [AWS Snowball FAQ](https://aws.amazon.com/snowball/faqs/)
 #### What is AWS Snowball?
