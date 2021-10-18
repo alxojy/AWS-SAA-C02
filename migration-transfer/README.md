@@ -83,7 +83,7 @@ Yes. AWS DMS can read and write from and to encrypted databases
 ## [AWS Transfer Family FAQ](https://aws.amazon.com/aws-transfer-family/faqs/)
 #### What is AWS Transfer Family?
 - Offers fully managed support for the transfer of files over SFTP, FTPS and FTP directly into and out of S3 or EFS
-- Supports multiple protocols for business to business file transfers so data can easily & securely be exchanged across stakeholders, third part vendors, business partners or customers
+- Supports multiple protocols for business to business file transfers so data can easily & securely be exchanged across stakeholders, third party vendors, business partners or customers
 - Remove the need to host & manage own file transfer service which includes operating & managing infrastructure, patching servers & monitoring
 
 ## [AWS Snowball FAQ](https://aws.amazon.com/snowball/faqs/)
