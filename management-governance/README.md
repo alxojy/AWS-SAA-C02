@@ -8,7 +8,7 @@
 - [AWS CloudTrail]()
 - [AWS Systems Manager]()
 - [AWS Auto Scaling]()
-- [AWS Backup]()
+- [AWS Backup](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-backup-faq)
 - [AWS CloudFormation]()
 - [Amazon EventBridge (Amazon CloudWatch Events)]()
 
