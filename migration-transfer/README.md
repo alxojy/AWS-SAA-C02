@@ -7,7 +7,7 @@
 - [AWS Transfer Family]()
 - [AWS Snowball](https://github.com/alxojy/AWS-SAA-C02/blob/main/migration-transfer/README.md#aws-snowball-faq)
 
-## [AWS DataSync](https://aws.amazon.com/datasync/faqs/)
+## [AWS DataSync FAQ](https://aws.amazon.com/datasync/faqs/)
 #### What is AWS DataSync?
 - Automates & accelerates copying large amounts of data between existing on-premises storage systems & AWS storage services
 - Can copy data between NFS, SMB, self managed object storage, Snowcone, S3 buckets including Glacier, EFS, FSx for Windows File Server
@@ -36,6 +36,12 @@ On going data distribution, data pipelines & data lake ingest | Continuous repli
 DataSync | Transfer Acceleration | Transfer Family
 ----|----|----
 To transfer data from existing storage systems to AWS | For high throughput during large file transfers to S3 for applications already integrated with S3 API | SFTP data exchange with third parties
+
+## [AWS Migration Hub FAQ](https://aws.amazon.com/migration-hub/faqs/)
+#### What is AWS Migration Hub?
+- Collect & view data about on-premises resources & track the progress of those applications during migration to AWS
+- Provides a single place to discover existing servers & track the status of each application migration
+- Integrates tools such as AWS Application Migration Service, AWS Server Migration Service, AWS Database Migration Service into 1 single tool
 
 ## [AWS Snowball FAQ](https://aws.amazon.com/snowball/faqs/)
 #### What is AWS Snowball?
