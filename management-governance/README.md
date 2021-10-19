@@ -2,7 +2,7 @@
 #### Contents
 - [AWS Organizations](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-organizations-faq)
 - [AWS Resource Access Manager](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-resource-access-manager-faq)
-- [AWS Trusted Advisor]()
+- [Amazon Trusted Advisor](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#amazon-trusted-advisor-faq)
 - [AWS Config]()
 - [AWS CloudWatch]()
 - [AWS CloudTrail]()
@@ -49,6 +49,29 @@
 
 #### Shareable AWS resources with RAM
 [List of shareable resources](https://docs.aws.amazon.com/ram/latest/userguide/shareable.html)
+
+## [Amazon Trusted Advisor FAQ](https://www.amazonaws.cn/en/support/trustedadvisor/faq/)
+#### What is Amazon Trusted Advisor?
+Inspects AWS environment & makes recommendations for saving money, improving system performance & closing security gaps
+![](https://d1.awsstatic.com/support/jp/Trusted%20Advisor%20best%20practice%20checks%20categories.76a13b0b2bf982c874d0d03e6138b7b73e45680c.png)
+
+## [Amazon Config FAQ](https://aws.amazon.com/config/faq/)
+#### What is AWS Config?
+- Fully managed service with resource inventory, configuration history and configuration change notifications to enable security & governance
+- Discover existing AWS resources, export a complete inventory of AWS resources with all configuration details & determine how a resource was configured at any point in time
+- Enable compliance auditing, security analysis, resource change tracking & troubleshooting
+
+#### What is a Config Rule?
+- Represents desired configurations for a resource & is evaluated against configuration changes on the relevent resources
+- Assess overall compliance & risk status from a configuration perspective
+
+#### Benefits of AWS Config
+- Easy to track resource's configuration
+- View continuously updated details of all configuration attributes associated with AWS resources
+- Receive SNS notifications for every configuration change
+
+#### AWS Config supported resource types
+[List of AWS Config supported resource types](https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources)
 
 ## [AWS Backup FAQ](https://aws.amazon.com/backup/faqs/)
 #### What is AWS Backup?
