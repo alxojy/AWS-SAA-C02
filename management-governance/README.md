@@ -101,7 +101,7 @@ Inspects AWS environment & makes recommendations for saving money, improving sys
 - SWF workflows
 - Storage Gateways
 
-#### List of default CloudWatch metrics
+#### CloudWatch default metrics
 [List of default CloudWatch metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html)
 
 ## [AWS CloudTrail FAQ](https://aws.amazon.com/cloudtrail/faqs/)
