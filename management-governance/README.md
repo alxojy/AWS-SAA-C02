@@ -1,7 +1,7 @@
 # Management & Governance
 #### Contents
 - [AWS Organizations](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-organizations-faq)
-- [AWS Resource Access Manager]()
+- [AWS Resource Access Manager](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-resource-access-manager-faq)
 - [AWS Trusted Advisor]()
 - [AWS Config]()
 - [AWS CloudWatch]()
@@ -41,6 +41,14 @@
  ] 
 }
 ```
+
+## [AWS Resource Access Manager FAQ](https://aws.amazon.com/ram/faqs/)
+#### What is AWS Resource Access Manager?
+- Securely share resources across AWS accounts within an organization or organizational units (OU) in AWS organizations and with IAM roles & users for supported resource types
+- Eliminates the need to provision & manage resources in every account
+
+#### Shareable AWS resources with RAM
+[List of shareable resources](https://docs.aws.amazon.com/ram/latest/userguide/shareable.html)
 
 ## [AWS Backup FAQ](https://aws.amazon.com/backup/faqs/)
 #### What is AWS Backup?
