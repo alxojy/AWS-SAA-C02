@@ -5,8 +5,8 @@
 - [Amazon GuardDuty](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#amazon-guardduty-faq)
 - [AWS Certificate Manager (ACM)](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-acm-faq)
 - [AWS Key Management Service (AWS KMS)](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-kms-faq)
-- [AWS Secrets Manager]()
-- [AWS Single Sign-On]()
+- [AWS Secrets Manager](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-secrets-manager-faq)
+- [AWS Single Sign-On](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-sso-faq)
 - [AWS Identity and Access Management (IAM)]()
 - [Amazon Inspector]()
 - [AWS Directory Service]()
@@ -143,19 +143,35 @@ Yes
 - Key material cannot be imported into the custom key store
 - KMS cannot automatically rotate keys
 
+## [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/faqs/)
+#### What is AWS Secrets Manager?
+- Secrets management service to protect access to applications, services & IT resources
+- Easily rotate, manage & retrieve database credentials, API keys & other secrets
+- Use IAM policies to control which users & applications can access the secrets
 
+#### Secrets Manager vs SSM Parameter Store
+Secrets manager | Parameter store
+----|----
+Can generate random secrets | Cannot generate random secrets
+Rotate keys & generate new key/password | Feature unavailable
+Billed | Free
+Cross account secret sharing via IAM | No cross account secret sharing
 
+## [AWS SSO](https://aws.amazon.com/single-sign-on/faqs/)
+#### What is AWS SSO?
+- Centrally manage user identities via SAML IdPs/ enabled cloud applications (ie. Salesforce, Microsoft 365) & custom built in house applications or AD credentials
+- Employees no longer have to remember multiple sets of credentials & access URLs to cloud applications
+- Assign employees access to AWS accounts managed with AWS Organizations
 
+#### Does AWS SSO support IAM users & groups?
+No. SSO does not support IAM currently
 
+#### Does AWS SSO support Amazon Cognito User Pools as an identity source?
+No. Amazon Cognito is used to manage identities for customer facing applications and is not a supported identity source in AWS SSO. External identity source(s) can be created via Microsoft AD/ Okta Universal Directory/ Azure AD or other supported IdPs
 
-
-
-
-
-
-
-
-
+#### How to control permissions a user gets when they use AWS SSO to access their accounts?
+- Can limit the user's permissions by picking a permission set
+- Permission sets are a collection of permissions that can be created in SSO, modelling them based on AWS managed policies for job functions or any AWS managed policies
 
 
 
