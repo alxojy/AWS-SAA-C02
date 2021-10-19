@@ -2,8 +2,8 @@
 #### Contents
 - [Amazon API Gateway](https://github.com/alxojy/AWS-SAA-C02/blob/main/content-delivery/ReadME.md#amazon-api-gateway-faq)
 - [Amazon Route53](https://github.com/alxojy/AWS-SAA-C02/tree/main/content-delivery#amazon-route53-faq)
-- [Amazon CloufFront](https://github.com/alxojy/AWS-SAA-C02/blob/main/content-delivery/ReadME.md#amazon-cloudfront-faq)
-- [AWS Global Accelerator]()
+- [Amazon CloudFront](https://github.com/alxojy/AWS-SAA-C02/blob/main/content-delivery/ReadME.md#amazon-cloudfront-faq)
+- [AWS Global Accelerator](https://github.com/alxojy/AWS-SAA-C02/tree/main/content-delivery#aws-global-accelerator-faq)
 
 ## <a href="https://aws.amazon.com/api-gateway/faqs/">Amazon API Gateway FAQ</a>
 #### What is Amazon API Gateway?
