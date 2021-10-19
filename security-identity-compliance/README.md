@@ -8,8 +8,8 @@
 - [AWS Secrets Manager](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-secrets-manager-faq)
 - [AWS Single Sign-On](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-sso-faq)
 - [AWS Identity and Access Management (IAM)]()
-- [Amazon Inspector]()
-- [AWS Directory Service]()
+- [Amazon Inspector](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#amazon-inspector-faq)
+- [AWS Directory Service](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-directory-service-faq)
 
 ## [AWS Shield FAQ](https://aws.amazon.com/shield/faqs/)
 #### What is AWS Shield?
@@ -175,13 +175,24 @@ No. Amazon Cognito is used to manage identities for customer facing applications
 
 
 
+## [Amazon Inspector FAQ](https://aws.amazon.com/inspector/faqs/)
+#### What is Amazon Inspector?
+- Automated security assessment service to test the network accessibility of EC2 instances & the security state of applications running on the instances
+- Make security testing a part of development, deployment pipeline & static production systems
 
+## [AWS Directory Service FAQ](https://aws.amazon.com/directoryservice/faqs/)
+#### What is AWS Directory Service?
+- Managed service providing directories that contain information about an organization including users, groups, computers & other resources
+- Designed to reduce management tasks
+- Offer high availability directory topology since each directory is deployed across multiple AZs & automatically monitors, detects & replaces domain controllers that fail 
 
+#### What can AWS Directory Service do?
+- Easy to setup & run directories in the cloud
+- Connect AWS resources with an existing on-premises Microsoft AD
+- Once the directory is created, it can be used to manage users & groups, providing SSO to applications & services, create & apply group policies, join EC2 instances to a domain & simplify deployment & management of cloud based Linux & Microsoft Windows workloads
+- Use existing corporate credentials to administer AWS resources via IAM
 
-
-
-
-
+![](https://d1.awsstatic.com/Products/product-name/diagrams/directory_service_howitworks.80bfccbf2f5d1d63558ec3c086aff247147258f1.png)
 
 
 
