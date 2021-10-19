@@ -1,7 +1,7 @@
 # Security, Identity & Compliance
 #### Contents
 - [AWS Shield](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-shield-faq)
-- [AWS WAF](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-waf-faq)
+- [AWS WAF](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-web-application-firewall-waf-faq)
 - [Amazon GuardDuty]()
 - [AWS Certificate Manager (ACM)]()
 - [AWS Key Management Service (AWS KMS)]()
