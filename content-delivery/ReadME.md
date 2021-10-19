@@ -2,7 +2,7 @@
 #### Contents
 - [Amazon API Gateway](https://github.com/alxojy/AWS-SAA-C02/blob/main/content-delivery/ReadME.md#amazon-api-gateway-faq)
 - [Amazon Route53](https://github.com/alxojy/AWS-SAA-C02/tree/main/content-delivery#amazon-route53-faq)
-- [Amazon CloufFront]()
+- [Amazon CloufFront](https://github.com/alxojy/AWS-SAA-C02/blob/main/content-delivery/ReadME.md#amazon-cloudfront-faq)
 - [AWS Global Accelerator]()
 
 ## <a href="https://aws.amazon.com/api-gateway/faqs/">Amazon API Gateway FAQ</a>
@@ -141,27 +141,61 @@ Integrate CloudFront distribution with [AWS WAF](https://aws.amazon.com/waf/) wh
 - Can specify the sampling rate (percentage of requests to receive real-time log records) & specific fields 
 - Contains the same detailed information as standard logs
 
+## [AWS Global Accelerator FAQ](https://aws.amazon.com/global-accelerator/faqs/)
+#### What is AWS Global Accelerator?
+- Networking service to improve availability & performance of applications to global users
+- Provides static IP addresses to provide a fixed entry point to applications & eliminates the complexity of managing specific IP addresses for different regions
+- Routes user traffic to the optimal endpoint based on performance, changes in application health, user's location & policies configured
+- Bring your own IP addresses (limit = 2) via BYOIP
 
+#### When to use AWS Global Accelerator?
+- Associate static IP addresses provided by AWS Global Accelerator to regional AWS resources & endpoints ie. NLB, ALB, EC2 instances & EIPs
+- Move endpoints between AZs or regions without updating DNS configurations
+- Dial traffic up or down for a specific region by configuring a traffic dial percantage for endpoint groups
+- Control proportion of traffic directed to each endpoint within an endpoint group by assigning weights
+![](https://cloudonaut.io/images/2019/11/global-accelerator.png)
 
+#### How does AWS Global Accelerator work with ELB?
+- AWS Global Accelerator relies on ELB to provide load balancing features
+- However, while ELB provides load balancing within 1 region, AWS Global Accelerator provides traffic management across multiple regions
+- A regional ELB is an ideal target for AWS Global Accelerator to distribute incoming application traffic across backends ie. EC2 instances or ECS tasks within a region
+![](https://d2908q01vomqb2.cloudfront.net/5b384ce32d8cdef02bc3a139d4cac0a22bb029e8/2020/01/24/aga-ip-preservation-alb.png)
 
+#### AWS Global Accelerator vs Amazon CloudFront
+Global Accelerator | CloudFront
+----|----
+Improves performance for applications over TCP or UDP by proxying packets at the edge to applications running in 1 or more regions | Improves performance for cacheable content (ie. images) & dynamic content (ie. dynamic site delivery)
 
+#### How to use AWS Global Accelerator for object storage with Amazon S3?
+- [S3 Multi-Region Access Points](https://aws.amazon.com/s3/features/multi-region-access-points/) use Global Accelerator to provide a single global endpoint to access a data set that spans multiple S3 buckets in different AWS regions
+- Allows multi-region applications with the same simple architecture used in a single region to run anywhere in the world
 
+#### Benefits of AWS Global Accelerator
+- Instant regional failover
+  - Automtically checks the health of applications & routes user traffic only to healthy application endpoints
+- High availability
+  - 2 IPv4 static IP addresses are allocated to an accelerator serviced by independent network zones
+  - Networks zones are isolated units with their own physical infrastructure & server static IP addresses from a unique IP subnet
+  - If one static IP address becomes unavailable, AWS GA reroutes the client to a healthy static IP address
+- Improved performance
+  - AWS GA ingresses traffic from the edge location that is closest to the end client through anycast static IP addresses
+  - Chooses the optimal AWS region based on the geography of end clients
+- Easy manageability
+  - The static IP addresses provided by AWS GA are fixed & provide a single entry point to the application
+  - Easily move endpoints between AZs or regions without updating the DNS configuration or client facing applications
+  - Use cases include A/B testing, application updates & failover simulations
+- Fine grained control
+  - Set a traffic dial for regional endpoint groups to dial traffic up or down for a specific AWS region
 
+#### Are there benefits of using AWS Global Accelerator in a single AWS region?
+Yes
+- Leverage AWS globally redundant network to improve application availability 
+- Easily move the application between AWS regions without changing the public interface
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### Global Accelerator IP addresses vs EC2 Elastic IP addresses
+Both are static
+GA IPs | EC2 EIPs
+----|----
+Associated with 1 or more endpoints - ALB, NLB, EC2 in any number of AWS regions | Tied to a single AWS resource - ELB or EC2 in a single AWS region
+Support client generated connections | Support both client & server generated connections
+Advertised from AWS network of edge locations | Advertised from a single AWS region
