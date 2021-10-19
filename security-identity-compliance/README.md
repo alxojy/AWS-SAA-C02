@@ -3,7 +3,7 @@
 - [AWS Shield](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-shield-faq)
 - [AWS WAF](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-web-application-firewall-waf-faq)
 - [Amazon GuardDuty](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#amazon-guardduty-faq)
-- [AWS Certificate Manager (ACM)]()
+- [AWS Certificate Manager (ACM)](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-acm-faq)
 - [AWS Key Management Service (AWS KMS)]()
 - [AWS Secrets Manager]()
 - [AWS Single Sign-On]()
@@ -56,6 +56,56 @@ Use CloudTrail
 GuardDuty | Macie
 ----|----
 Broad protection of AWS accounts, workloads & data by helping to identify threats such as attacker reconnaissance, instance compromise, account compromise & bucket compromise | Discover & protect sensitive data in S3 by classifying data, security & access controls on the data
+
+## [AWS ACM FAQ](https://aws.amazon.com/certificate-manager/faqs/)
+#### What is ACM?
+- Easily provision, manage & deploy public & private SSL/TLS certificates
+- SSL/TLS certificates are used to secure network communications & establish the identity of websites over the Internet as well as resources on private networks
+- Removes the time consuming manual process of purchasing, uploading & renewing SSL/TLS certificates
+- Can quickly request a certificate, deploy it on AWS resources ie. ELB, CloudFront distributions, APIs on API Gateway, Elastic Beanstalk & CloudFormation for public certificates that use email verification
+
+#### What is an SSL/TLS certificate?
+- Allow web browsers to identify & establish encrypted network connections to websites using SSL/TLSS protocol
+- Certificates are used within a cryptographic system (PKI) that provides a one way party to establish the identity of another party if they both trust a third party known as a certificate authority
+
+#### What are private certificates?
+- Identify resources within an organization ie. services, applications, users
+- Each endpoint uses a certificate & cryptographic techniques to prove its identity 
+- Used by internal API endpoints, web servers, VPN users, IoT devices etc
+
+#### Public vs private certificates
+Public | Private
+----|----
+Identify resources on the public Internet | Identify resources on private networks
+Public CAs must meet security standards imposed by the browser & OS | Private CAs are managed by private organizations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
