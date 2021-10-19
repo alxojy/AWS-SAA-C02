@@ -143,7 +143,7 @@ Yes
 - Key material cannot be imported into the custom key store
 - KMS cannot automatically rotate keys
 
-## [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/faqs/)
+## [AWS Secrets Manager FAQ](https://aws.amazon.com/secrets-manager/faqs/)
 #### What is AWS Secrets Manager?
 - Secrets management service to protect access to applications, services & IT resources
 - Easily rotate, manage & retrieve database credentials, API keys & other secrets
@@ -157,7 +157,7 @@ Rotate keys & generate new key/password | Feature unavailable
 Billed | Free
 Cross account secret sharing via IAM | No cross account secret sharing
 
-## [AWS SSO](https://aws.amazon.com/single-sign-on/faqs/)
+## [AWS SSO FAQ](https://aws.amazon.com/single-sign-on/faqs/)
 #### What is AWS SSO?
 - Centrally manage user identities via SAML IdPs/ enabled cloud applications (ie. Salesforce, Microsoft 365) & custom built in house applications or AD credentials
 - Employees no longer have to remember multiple sets of credentials & access URLs to cloud applications
