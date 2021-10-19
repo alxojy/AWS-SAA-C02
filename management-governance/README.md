@@ -5,8 +5,8 @@
 - [Amazon Trusted Advisor](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#amazon-trusted-advisor-faq)
 - [AWS Config](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-config-faq)
 - [AWS CloudWatch](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#amazon-cloudwatch-faq)
-- [AWS CloudTrail]()
-- [AWS Systems Manager]()
+- [AWS CloudTrail](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-cloudtrail-faq)
+- [AWS Systems Manager](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-systems-manager-faq)
 - [AWS Auto Scaling]()
 - [AWS Backup](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-backup-faq)
 - [AWS CloudFormation]()
@@ -103,6 +103,34 @@ Inspects AWS environment & makes recommendations for saving money, improving sys
 
 #### List of default CloudWatch metrics
 [List of default CloudWatch metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html)
+
+## [AWS CloudTrail FAQ](https://aws.amazon.com/cloudtrail/faqs/)
+#### What is AWS CloudTrail?
+Web service that records activity made on an AWS account & delivers the log files to the account's S3 bucket
+
+#### CloudTrail benefits
+- Records information about each action taken on an account including who made the request, the services used, the actions performed, paramters for the actions & response return
+- Track changes made to AWS resources
+
+#### Integration with CloudWatch logs
+CloudTrail integration with CloudWatch logs delivers management & data events captured by CloudTrail to a CloudWatch log stream in the log group specified. This integration enables SNS notifications to be sent for CloudWatch alarms such as API calls created, modified and deletion of resources
+
+## [AWS Systems Manager FAQ](https://aws.amazon.com/systems-manager/faq/)
+#### What is AWS Systems Manager?
+- Centralize operational data from multiple AWS services & automate tasks across AWS resources
+- Create logical groups of resources such as applications, different layers of an application stack or production vs development environments
+- Can select a resource group & view its recent API activity, resource configuration changes etc.
+![](https://d1.awsstatic.com/AWS%20Systems%20Manager/product-page-diagram-AWS-Systems-Manager_how-it-works.2e7c5d550e833eed0f49fb8dc1872de23b09d183.png)
+
+#### Who should use AWS Systems Manager?
+- For accounts using multiple AWS services, AWS Systems Manager provides a centralized & consistent way to gather operational insights & carry our routine management tasks on different development vs production environments
+- To view System Manager's built-in insights with dashboards for resources such as API calls through CloudTrail & configuration changes on AWS Config
+- To manage EC2 instances & perform actions on the instances by installing the Systems Manager agent on the EC2 instances & attaching an IAM instance profile
+
+#### AWS Systems Manager parameter store
+- Centralized store to manage configuration data such as passwords
+- Integrated with KMS for encryption
+- Control user & resource access to parameters using IAM
 
 ## [AWS Backup FAQ](https://aws.amazon.com/backup/faqs/)
 #### What is AWS Backup?
