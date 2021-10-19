@@ -10,7 +10,7 @@
 - [AWS Auto Scaling]()
 - [AWS Backup](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-backup-faq)
 - [AWS CloudFormation](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-CloudFormation-faq)
-- [Amazon EventBridge (Amazon CloudWatch Events)]()
+- [Amazon EventBridge (Amazon CloudWatch Events)](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#amazon-eventbridge-faq)
 
 ## [AWS Organizations FAQ](https://aws.amazon.com/organizations/faqs/)
 #### What is AWS Organizations?
@@ -151,8 +151,13 @@ Building & managing own backup workflows across all applications in a compliant 
 #### What is AWS CloudFormation?
 - Easy way to create a collection of AWS & third-party resources by provisioning them through code (CDK, JSON, YAML)
 - Deploy & update compute, database & many other resources in a declarative style
-- Can with Chef, Puppet & Terraform
+- Can be used with Chef, Puppet & Terraform
 
+## [Amazon EventBridge FAQ](https://aws.amazon.com/eventbridge/faqs/)
+#### What is Amazon EventBridge?
+- Provides real-time access to changes in data in AWS services without writing code
+- To start, select an event source & a target 
+![](https://d1.awsstatic.com/product-marketing/EventBridge/product-page-diagram-EventBridge_How-it-works%402x.440c28026584e461304f54df9c6ea7a4062f73f7.png)
 
 
 
