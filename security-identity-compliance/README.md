@@ -2,7 +2,7 @@
 #### Contents
 - [AWS Shield](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-shield-faq)
 - [AWS WAF](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-web-application-firewall-waf-faq)
-- [Amazon GuardDuty]()
+- [Amazon GuardDuty](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#amazon-guardduty-faq)
 - [AWS Certificate Manager (ACM)]()
 - [AWS Key Management Service (AWS KMS)]()
 - [AWS Secrets Manager]()
@@ -46,7 +46,16 @@ Yes. AWS WAF is integrated with CloudFront which supports custom origins out of 
 #### How to get a history of all AWS WAF API calls made?
 Use CloudTrail
 
+## [Amazon GuardDuty FAQ](https://aws.amazon.com/guardduty/faqs/)
+#### What is Amazon GuardDuty?
+- Offers threat detection to continuously monitor & protect AWS accounts, workloads & data stored in S3
+- Analyzes continuous streams of metadata generated & network activity found in CloudTrail events, VPC flow logs & DNS logs
+- Uses integrated threat intelligence, anomaly detection & ML to identify threats more accurately
 
+#### Amazon GuardDuty vs Amazon Macie
+GuardDuty | Macie
+----|----
+Broad protection of AWS accounts, workloads & data by helping to identify threats such as attacker reconnaissance, instance compromise, account compromise & bucket compromise | Discover & protect sensitive data in S3 by classifying data, security & access controls on the data
 
 
 
