@@ -9,7 +9,7 @@
 - [AWS Systems Manager](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-systems-manager-faq)
 - [AWS Auto Scaling]()
 - [AWS Backup](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-backup-faq)
-- [AWS CloudFormation]()
+- [AWS CloudFormation](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-CloudFormation-faq)
 - [Amazon EventBridge (Amazon CloudWatch Events)]()
 
 ## [AWS Organizations FAQ](https://aws.amazon.com/organizations/faqs/)
@@ -146,3 +146,25 @@ Building & managing own backup workflows across all applications in a compliant 
 #### How does AWS Backup work?
 - Create a backup policy called a backup plan which defines parameters such as how frequently to backup resources & how long to store backups
 - Assign resources to backup plans & AWS Backup will automatically backup those resources & manage backup retention
+
+## [AWS CloudFormation FAQ](https://aws.amazon.com/cloudformation/faqs/)
+#### What is AWS CloudFormation?
+- Easy way to create a collection of AWS & third-party resources by provisioning them through code (CDK, JSON, YAML)
+- Deploy & update compute, database & many other resources in a declarative style
+- Can with Chef, Puppet & Terraform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
