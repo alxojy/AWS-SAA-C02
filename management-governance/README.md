@@ -7,7 +7,7 @@
 - [AWS CloudWatch](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#amazon-cloudwatch-faq)
 - [AWS CloudTrail](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-cloudtrail-faq)
 - [AWS Systems Manager](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-systems-manager-faq)
-- [AWS Auto Scaling]()
+- [AWS Auto Scaling](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-auto-scaling-faq)
 - [AWS Backup](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-backup-faq)
 - [AWS CloudFormation](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#aws-CloudFormation-faq)
 - [Amazon EventBridge (Amazon CloudWatch Events)](https://github.com/alxojy/AWS-SAA-C02/blob/main/management-governance/README.md#amazon-eventbridge-faq)
@@ -131,6 +131,33 @@ CloudTrail integration with CloudWatch logs delivers management & data events ca
 - Centralized store to manage configuration data such as passwords
 - Integrated with KMS for encryption
 - Control user & resource access to parameters using IAM
+
+## [AWS Auto Scaling FAQ](https://aws.amazon.com/autoscaling/faqs/)
+#### Benefits of AWS Auto Scaling
+- Setup scaling quickly
+ - Define target utilization levels for each group of resources
+- Smart scaling decisions
+ - Automate how different resource groups respond to changes in demand
+ - AWS Auto Scaling automatically creates all of the scaling policies & sets targets based on the client's preference
+- Automatically maintain performance
+ - Continually monitors resources to ensure they are operating at the desired performance levels
+ - When demand spikes, AWS Auto Scaling automatically increases the capacity of constrained resources
+- Anticipate costs & avoid overspending
+
+#### Resources with AWS Auto Scaling 
+- EC2 Auto Scaling groups
+- ECS services
+- EMR clusters
+- Read & write capacity for DynamoDB
+- Aurora Replicas
+- EC2 Spot Fleets
+
+#### AWS Auto Scaling vs Amazon EC2 Auto Scaling
+Auto Scaling | EC2 Auto Scaling
+----|----
+Scaling multiple resources across multiple services | Only scale EC2 Auto Scaling groups
+Dynamic scaling policies (target tracking & predictive) for multiple EC2 Auto Scaling groups or other resources | Dynamic, scheduled or step scaling policies
+Configure scaling policies for all scalable resources is faster than managing scaling policies for each resource | 
 
 ## [AWS Backup FAQ](https://aws.amazon.com/backup/faqs/)
 #### What is AWS Backup?
