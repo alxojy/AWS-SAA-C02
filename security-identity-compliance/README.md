@@ -7,7 +7,7 @@
 - [AWS Key Management Service (AWS KMS)](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-kms-faq)
 - [AWS Secrets Manager](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-secrets-manager-faq)
 - [AWS Single Sign-On](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-sso-faq)
-- [AWS Identity and Access Management (IAM)]()
+- [AWS Identity and Access Management (IAM)](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-iam-faq)
 - [Amazon Inspector](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#amazon-inspector-faq)
 - [AWS Directory Service](https://github.com/alxojy/AWS-SAA-C02/blob/main/security-identity-compliance/README.md#aws-directory-service-faq)
 
@@ -173,7 +173,86 @@ No. Amazon Cognito is used to manage identities for customer facing applications
 - Can limit the user's permissions by picking a permission set
 - Permission sets are a collection of permissions that can be created in SSO, modelling them based on AWS managed policies for job functions or any AWS managed policies
 
+## [AWS IAM FAQ](https://aws.amazon.com/iam/faqs/)
+#### What is AWS IAM?
+- Control individual & group access to AWS resources
+- Assign users security credentials (ie. access keys, passwords, MFA) or temporary credentials to AWS services & resources
+- Manage access for federated users & request security credentials with configurable expirations allowing these accounts to access resources without creating an IAM user account for them. Use any identity management solution that supports SAML or AWS SSO
+- Allows auditing via CloudTrail
+- Enable the AWS account to configure a password rotation policy
+- Rotate security credentials regularly
+- Provides MFA for privileged users
 
+### IAM user
+#### What is a user?
+- Unique identity recognized by AWS services & applications
+- Can be an individual, system or application requiring access to AWS services
+
+#### Who is able to manage users for an AWS account?
+The AWS account holder or individual users that have been granted permissions to place calls to IAM APIs to manage other users
+
+### IAM group
+#### What is a group?
+- Collection of IAM users to easily manage permissions for a collection of users rather than for each individual user
+- Add users to or remove them from a group
+- A user can belong to multiple groups
+- Groups cannot belong to other groups
+- Groups can be granted permissions using access control policies
+- Groups do not have security credentials and cannot access web services directly
+
+### IAM role
+#### What is an IAM role?
+- IAM entity that defines a set of permissions for making AWS service requests
+- Not associated with a specific user or group
+- Trusted entities assume roles ie. IAM users, applications or AWS services such as EC2
+
+#### What problems do IAM roles solve?
+- Allow access delegation with defined permissions to trusted entities without having to share long-term access keys
+- IAM roles can be used to delete access to IAM users managed within the account, to IAM users under a different account or to an AWS service ie. EC2
+
+#### IAM role vs IAM user
+Role | User
+----|----
+No credentials | Long term credentials
+Cannot make direct requests to AWS services | Used to directly interact with AWS services
+
+#### When to use an IAM user, IAM group or IAM role?
+User | Group | Role
+----|----|----
+Permanent long-term credentials used to directly interact with AWS services | Management convenience to manage the same set of permissions for a set of IAM users | Delegate access within or between AWS accounts
+
+#### Can an IAM role be added to an IAM group?
+No
+
+### What are the features of IAM roles for EC2 instances?
+- Enables applications running on EC2 to make requests to S3, SQS, SNS without copying the AWS access key(s) to every instance
+- Simplifies management & deployment of AWS access keys to EC2 instances
+- AWS temporary security credentials are created when making requests from running EC2 instances to AWS services
+- Automatic rotation of AWS temporary security credentials
+- Granular AWS service permissions for applications running on EC2 instances
+- Can be associated with a running instance/ can be changed on a running instance
+- 1 IAM role = multiple EC2 instances, 1 EC2 instance = 1 role
+
+#### What are the features of IAM roles for Auto Scaling groups?
+All EC2 instances launched in the ASG will have the role as input parameter
+
+### Permissions
+#### How do permissions work?
+Access control policies are attached to users, groups & roles to assign permissions to AWS resources. By default, IAM users, groups and roles have no permissions; users with sufficient permissions must use a policy to grant the desired permissions
+
+#### [Types of IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html)
+Managed policies | Inline policies
+----|----
+Reusable: A single managed policy can be attached to multiple principal entities (ie. users, groups, roles) | Strict 1 to 1 relationship between a policy & identity it's applied to
+Central change management: The change is applied to all principal entities that the policy is attached to | The change is only applied to the principal entity it is attached to
+Versioning & roll back | 
+Delegating permissions management: Allow users in the AWS account to attach & detach policies while maintaining control over the permissions defined in those policies | 
+Automatic updates for AWS managed policies
+
+#### How to use temporary security credentials to call AWS service APIs?
+- Sign requests with temporary security credentials obtained from AWS Security Token Service (AWS STS)
+- Include the "x-amz-security-token" HTTP header for S3
+- Include the SecurityToken paramater for other AWS services
 
 ## [Amazon Inspector FAQ](https://aws.amazon.com/inspector/faqs/)
 #### What is Amazon Inspector?
@@ -193,22 +272,4 @@ No. Amazon Cognito is used to manage identities for customer facing applications
 - Use existing corporate credentials to administer AWS resources via IAM
 
 ![](https://d1.awsstatic.com/Products/product-name/diagrams/directory_service_howitworks.80bfccbf2f5d1d63558ec3c086aff247147258f1.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
