@@ -1,8 +1,8 @@
 # Networking
 #### Contents
 - [Amazon VPC](https://github.com/alxojy/AWS-SAA-C02/blob/main/networking/ReadME.md#amazon-vpc-faq)
-- [AWS Transit Gateway]()
-- [AWS Direct Connect]()
+- [AWS Transit Gateway](https://github.com/alxojy/AWS-SAA-C02/blob/main/networking/ReadME.md#aws-transit-gateway-faq)
+- [AWS Direct Connect](https://github.com/alxojy/AWS-SAA-C02/blob/main/networking/ReadME.md#aws-direct-connect-faq)
 
 ## [Amazon VPC FAQ](https://aws.amazon.com/vpc/faqs/)
 #### What is Amazon VPC?
@@ -20,7 +20,9 @@
 - Peering connection
 - Egress-only Internet Gateway: For IPv6 traffic
 
-![](https://ibb.co/Z8PFG10)
+|![](VPC.jpg)|
+|----|
+|Example VPC|
 
 #### VPC endpoints
 Gateway | Interface 
@@ -142,11 +144,28 @@ Yes
 - SNS
 - DataSync
 
+## [AWS Transit Gateway FAQ](https://aws.amazon.com/transit-gateway/faqs/)
+#### What is AWS Transit Gateway?
+Connects VPCs & on-premises networks through a central hub to simplify the network from complex peering relationships
 
+#### How does routing work in AWS Transit Gateway?
+- Supports dynamic & static routing between attached Amazon VPCs and VPNs
+- Amazon VPCs, VPNs, Direct Connect gateways, Transite Gateway Connect and peered Transit Gateways are associated to the default route table
 
+#### How are routes propagated into AWS Transit Gateway?
+- Routes propagated to/from on-premises networks
+  - When connect VPN or Direct Connect Gateway, routes are propagated between AWS Transit Gateway and on-premises router using Border Gateway Protocol
+- Routes propagated to/from Amazon VPCs
+  - When an Amazon VPC is attached to an AWS Transit Gateway, the Amazon VPC Classless Inter-Domain Routing CIDR will propagate into the AWS Transit Gateway route table using internal IPs
+  - CIDR is a method for allocating IP addresses and IP routing to slow the growth of ruoting tables on routers across the Internet
+  - Routes in the AWS Transit Gateway route table will not be propagated to the Amazon VPC's route table
 
+## [AWS Direct Connect FAQ](https://aws.amazon.com/directconnect/faqs/)
+#### What is AWS Direct Connect?
+- Data is transported through a private network connection between on-premises & AWS
+- Services ie. EC2, VPC, S3 & DynamoDB can be used with Direct Connect
 
-
+![](direct-connect.png)
 
 
 
