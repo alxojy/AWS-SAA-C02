@@ -224,7 +224,7 @@ Permanent long-term credentials used to directly interact with AWS services | Ma
 #### Can an IAM role be added to an IAM group?
 No
 
-### What are the features of IAM roles for EC2 instances?
+#### What are the features of IAM roles for EC2 instances?
 - Enables applications running on EC2 to make requests to S3, SQS, SNS without copying the AWS access key(s) to every instance
 - Simplifies management & deployment of AWS access keys to EC2 instances
 - AWS temporary security credentials are created when making requests from running EC2 instances to AWS services
