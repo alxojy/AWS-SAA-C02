@@ -1,12 +1,12 @@
 # Networking
 #### Contents
-- [Amazon VPC]()
+- [Amazon VPC](https://github.com/alxojy/AWS-SAA-C02/blob/main/networking/ReadME.md#amazon-vpc-faq)
 - [AWS Transit Gateway]()
 - [AWS Direct Connect]()
 
 ## [Amazon VPC FAQ](https://aws.amazon.com/vpc/faqs/)
 #### What is Amazon VPC?
-- Provision a logically isolated section of AWS cloud where AWS resources can be launched in the virtual netowrk defined
+- Provision a logically isolated section of AWS cloud where AWS resources can be launched in the virtual network defined
 - Have complete control over virtual networking environment including selection of IP address ranges, creation of subnets, configuration of route tables & network gateways
 - Create a hardware VPN connection between on-premises & VPC
 - Customizable network configuration with public & private subnets
@@ -19,6 +19,8 @@
 - VPC Endpoints: Enables private connectivity to services hosted in AWS from within the VPC without an Internet Gateway, VPN, NAT or firewall proxies
 - Peering connection
 - Egress-only Internet Gateway: For IPv6 traffic
+
+![](https://ibb.co/Z8PFG10)
 
 #### VPC endpoints
 Gateway | Interface 
@@ -72,6 +74,15 @@ Instance level | Subnet level
 Only deny rules | Both allow & deny rules
 Stateful - Tracks the origin of a request & automatically allow the reply to the request to be returned | Stateless - Outbound rule must explicitly allow the destination & port for the reply
 
+#### Default security group
+- Allow inbound traffic from network interfaces that are assigned to the same security group
+- Allow all outbound traffic
+
+#### Default vs custom NACL
+Default | Custom
+----|----
+Allow all inbound & outbound traffic | By default, deny all inbound & outbound traffic
+
 #### Can EC2 instances within a VPC communicate with EC2 instances in another region?
 Yes via
 - Inter-Region VPC peering
@@ -101,10 +112,35 @@ Yes however an instance launched in a VPC using EBS backed AMI maintains the sam
 #### Can EC2 RIs be used in a VPC?
 Yes
 
+### VPC peering
+#### Can a peering connection be created for a VPC in a different region?
+Yes
 
+#### Can a peering connection be created for a VPC in another AWS account?
+Yes
 
+### AWS PrivateLink
+#### What is AWS PrivateLink?
+- Enables customers to access services hosted on AWS while keeping all the network traffic within the AWS network
+- Service users can use this to privately access services powered by PrivateLink from Amazon VPC or on-premises without using public IPs & without requiring the traffic to traverse across the Internet
+- Service owners can register NLBs to PrivateLink services & provide the services to other AWS customers
 
+#### How to use AWS PrivateLink?
+- As a service user, 
+  - VPC interface endpoints must be created for services powered by PrivateLink
+  - The service endpoints will appear as ENIs with private IPs in VPCs
+  - Once the endpoints are created, any traffic destined to these IPs will get privately routed to the corresponding AWS services
+- As a service owner, 
+  - Onboard services to AWS PrivateLink by establishing a NLB to front the service & create a PrivateLink service to register with the NLB
+  - Customers will be able to establish endpoints within their VPC to connect to the service after their accounts & IAM roles are whitelisted
 
+#### Which services are available on AWS PrivateLink?
+- EC2
+- ELB
+- Kinesis Streams
+- EC2 Systems Manager
+- SNS
+- DataSync
 
 
 
