@@ -35,12 +35,12 @@ Add an entry to the route table & route traffic to the supported service via AWS
 - Internet gateway
 - Corporate data center via AWS site to site VPN connection (Virtual Private Gateway)
 - Both the Internet & Virtual Private Gateway
-- Other AWS services (Internet gateway, NAT, irtual Private Gateway, VPC endpoints)
+- Other AWS services (Internet gateway, NAT, Virtual Private Gateway, VPC endpoints)
 - VPC peering
 
 #### How do instances in a VPC access the Internet?
 For instances with public IPs
-- Public IP address & EIPs to send and receive traffic from the Internet
+- Public IP address & EIPs to send and receive traffic from the Internet   
 For instances without public IPs
 - NAT gateways. These instances use the public IP of the NAT gateway
 - VPN or Direct Connect connection. These instances can route their Internet traffic down the virtual private gateway to the existing data center
